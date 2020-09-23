@@ -5,12 +5,23 @@ export default class Book extends React.Component {
   constructor(props) {
     super(props)
     this.deleteHandler = this.deleteHandler.bind(this)
+    this.statusHandler = this.statusHandler.bind(this)
   }
 
   deleteHandler() {
-    Axios.delete(`http://localhost:5000/${this.props.book._id}`)
-    .then(console.log("Deleted book sucessfully"))
-    .catch(err => console.log(err))
+    const bookId = this.props.book._id
+    Axios.delete(`http://localhost:5000/books/${bookId}`)
+      .then(window.location = "/")
+      .catch(err => console.log(err.response.data))
+  }
+
+  // Doesn't seem to do anything on the back end side!
+  statusHandler() {
+    const bookId = this.props.book._id
+    const book = {...this.props.book, status: this.props.status === "read" ? "unread" : "read"}
+    Axios.post(`http://localhost:5000/books/update/${bookId}`, book)
+      .then(console.log(book))
+      .catch(err => console.log(err.response.data))
   }
 
   render() {
@@ -20,7 +31,7 @@ export default class Book extends React.Component {
         <h5 className="book-author">{this.props.book.author}</h5>
         <p className="book-pages">{this.props.book.pages}</p>
         <div onClick={this.deleteHandler} className="fas fa-trash"></div>
-        <div style={{color: this.props.book.status === "unread" ? 'red' : 'green'}} className="fas fa-book-open"></div>
+        <div onClick={this.statusHandler} style={{color: this.props.book.status === "unread" ? 'red' : 'green'}} className="fas fa-book-open"></div>
         <div className="status-div">
           <p style={{color: this.props.book.status === "unread" ? 'red' : 'green'}} className="read-status">
             {this.props.book.status === "unread" ? "UNREAD" : "READ"}

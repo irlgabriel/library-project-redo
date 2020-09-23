@@ -52,8 +52,6 @@ export default class CreateBook extends React.Component {
       status: this.state.status,
     };
 
-    // Validate form before submitting it to the database;
-
     axios
       .post("http://localhost:5000/books/add", book)
       .then((res) => {
