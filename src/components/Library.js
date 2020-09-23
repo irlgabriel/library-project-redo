@@ -11,10 +11,6 @@ export default class Library extends React.Component {
     };
   }
 
-  setBooks(books) {
-    this.setState({books})
-  }
-
   componentDidMount() {
     axios.get("http://localhost:5000/books/").then((res) => {
       this.setState({

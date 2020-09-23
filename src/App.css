@@ -8,10 +8,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.App {
+
+#main-container {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  padding: 0;
 }
 
 form {
@@ -19,6 +21,7 @@ form {
   min-width: 550px;
   border-radius: 10px;
   text-align: center;
+  margin-top: 10px;
 }
 
 
@@ -27,16 +30,16 @@ header {
   text-align: center;
 }
 
+footer a {
+  font-size: 22px;
+}
 
 footer {
   margin-top: auto;
-  padding: 20px;
-  background-color: rgba(196, 196, 196, 0.575);
+  padding: 18px;
+  color: white;
   font-size: 20px;
 }
-
-footer a,
-
 
 a:hover {
   color: blue;
@@ -63,6 +66,21 @@ a:hover {
   width: 60%;
   background-color: rgb(124, 124, 124);
   transition: all 0.5s ease-in-out;
+}
+
+input:focus:invalid {
+  border-color: #a72828 !important;
+  box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.5) !important;
+}
+
+input:focus:valid {
+  border-color: #28a745 !important;
+  box-shadow: 0 0 0 0.2rem rgba(0, 255, 60, 0.5) !important;
+}
+
+input:invalid {
+  border: none;
+  outline: none;
 }
 
 .book-read {
@@ -96,11 +114,17 @@ a:hover {
   font-weight: bold;
 }
 
+label {
+  font-size: 14px;
+}
+
 .fa-book-open {
   display: inline-block;
+  font-size: 20px;
 }
 
 .fa-trash {
+  display: inline-block;
   position: absolute;
   font-size: 25px;
   bottom: 15px;

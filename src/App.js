@@ -8,16 +8,18 @@ import Navbar from "./components/Navbar";
 import Library from "./components/Library";
 import CreateBook from "./components/CreateBook";
 import EditBook from "./components/EditBook";
+import Footer from "./components/Footer"
 
 function App() {
   return (
     <Router>
-      <div>
+      <div className="container-fluid" id="main-container">
         <Navbar />
         <br />
         <Route path="/" exact component={Library} />
         <Route path="/create" component={CreateBook} />
         <Route path="/edit/:id" component={EditBook} />
+        <Footer />
       </div>
     </Router>
   );

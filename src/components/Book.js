@@ -1,6 +1,9 @@
 import React from "react";
 
 export default class Book extends React.Component {
+  constructor(props) {
+    super(props)
+  }
 
   deleteHandler() {
     this.props.setState(this.props.books.filter(book => book._id !== this.props.book._id))
