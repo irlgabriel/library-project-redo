@@ -1,6 +1,15 @@
 import React from "react";
 
-function BookForm() {
+function BookForm(props) {
+  function submitHandler(e) {
+    e.preventDefault()
+    const form = e.target.parentElement;
+    const title = form.title.value;
+    const author = form.author.value;
+    const pages = form.pages.value;
+    props.setBooks([...props.books, {title, author, pages}])
+  }
+
   return(
     <form>
       <div className="form-group">
@@ -15,7 +24,7 @@ function BookForm() {
        <label for="pages">Number of Pages</label>
         <input placeholder="e.g. '693'"min="0" type="number" name="pages"></input>
       </div>
-      <button type="submit">Add Book</button>
+      <button onClick={submitHandler} type="submit">Add Book</button>
     </form>
   )
 }
