@@ -78,13 +78,20 @@ input:focus:valid {
   box-shadow: 0 0 0 0.2rem rgba(0, 255, 60, 0.5) !important;
 }
 
-input:invalid {
-  border: none;
-  outline: none;
+.book-read {
+  opacity: 0.55;
 }
 
-.book-read {
-  opacity: 0.4;
+.status-div{
+  position: absolute;
+  bottom: 0;
+  left: 30%;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.411);
+  width: 40%;
+  text-align: center;
+
 }
 
 .status-div p {

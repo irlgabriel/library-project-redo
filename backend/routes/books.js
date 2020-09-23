@@ -11,8 +11,8 @@ router.route("/add").post((req, res) => {
   const title = req.body.title;
   const author = req.body.author;
   const pages = req.body.pages;
-
-  const newBook = new Book({ title, author, pages });
+  const status = req.body.status;
+  const newBook = new Book({ title, author, pages, status});
 
   newBook
     .save()
@@ -37,6 +37,7 @@ router.route("/update/:id").post((req, res) => {
     book.title = req.body.title;
     book.author = req.body.author;
     book.pages = req.body.pages;
+    book.status = req.body.status;
 
     book
       .save()

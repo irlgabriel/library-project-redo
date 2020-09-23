@@ -108,9 +108,9 @@ export default class CreateBook extends React.Component {
             onChange={this.onChangePages}
           ></input>
         </div>
-        <div class="form-group col-12">
-          <select onChange={this.onChangeStatus}>
-            <option value="read" selected>Read</option>
+        <div className="form-group col-12">
+          <select onChange={this.onChangeStatus} defaultValue="unread">
+            <option value="read">Read</option>
             <option value="unread">Unread</option>
           </select>
         </div>

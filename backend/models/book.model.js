@@ -13,7 +13,6 @@ const bookSchema = new Schema(
     author: {
       type: String,
       required: true,
-      unique: true,
       minlength: 3,
     },
     pages: {
@@ -22,6 +21,10 @@ const bookSchema = new Schema(
       min: 1,
       max: 10000,
     },
+    status: {
+      type: String,
+      required: true,
+    }
   },
   {
     timestamps: true,
