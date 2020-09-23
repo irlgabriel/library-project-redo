@@ -1,24 +1,24 @@
-import React, { useState } from 'react';
-import './App.css';
+import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 // Import components
-import Header from "./components/Header"
-import Footer from "./components/Footer"
-import BookForm from "./components/BookForm"
+import Navbar from "./components/Navbar"
 import Library from "./components/Library"
+import CreateBook from "./components/CreateBook"
+import EditBook from "./components/EditBook"
 
 function App() {
-  const [readStatus, setRead] = useState([""])
-  const [books, setBooks] = useState([])
   return (
     <Router>
-    <div className="App">
-      <Header />
-      <BookForm books={books} setBooks={setBooks} readStatus={readStatus} setRead={setRead}/>
-      <Library books={books} setBooks={setBooks}/>
-      <Footer />
-    </div>
+      <div>
+        <Navbar />
+        <br/>
+        <Route path="/" exact component={Library} />
+        <Route path="/create" component={CreateBook} />
+        <Route path="/edit/:id" component={EditBook} />
+
+      </div>
     </Router>
   );
 }
