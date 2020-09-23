@@ -14,7 +14,7 @@ function Book(props) {
   }
 
   function deleteHandler(e) {
-    props.setBooks(props.books.filter(book => book.id != props.book.id))
+    props.setBooks(props.books.filter(book => book.id !== props.book.id))
   }
   return(
     <div className={`book ${props.book.readStatus === "read" ? "book-read" : ""}`}>
@@ -22,7 +22,7 @@ function Book(props) {
       <h4 className="book-author">{props.book.author}</h4>
       <p className="book-pages">{props.book.pages}</p>
       <div className="fas fa-trash" onClick={deleteHandler}></div>
-      <div className="fas fa-book-open" onClick={statusHandler}></div>
+      <div style={{color: props.book.readStatus === "read" ? 'green' : 'red'}} className="fas fa-book-open" onClick={statusHandler}></div>
       <div className="status-div">
         <p className={`read-status ${props.book.readStatus === "read" ? "read" : "unread"}`}>{props.book.readStatus === "read" ? "READ" : "UNREAD"}</p>
       </div>
