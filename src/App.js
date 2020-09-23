@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+// Import components
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import BookForm from "./components/BookForm"
@@ -9,12 +12,14 @@ function App() {
   const [readStatus, setRead] = useState([""])
   const [books, setBooks] = useState([])
   return (
+    <Router>
     <div className="App">
       <Header />
       <BookForm books={books} setBooks={setBooks} readStatus={readStatus} setRead={setRead}/>
       <Library books={books} setBooks={setBooks}/>
       <Footer />
     </div>
+    </Router>
   );
 }
 
