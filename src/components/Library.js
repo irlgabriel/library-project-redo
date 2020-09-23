@@ -9,7 +9,10 @@ export default class Library extends React.Component {
     this.state = {
       books: [],
     };
+  }
 
+  setBooks(books) {
+    this.setState({books})
   }
 
   componentDidMount() {
@@ -30,9 +33,6 @@ export default class Library extends React.Component {
             books={this.state.books}
             setState={this.setState}
             book={book}
-            title={book.title}
-            author={book.author}
-            pages={book.pages}
           />
         ))}
       </div>
