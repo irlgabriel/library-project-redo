@@ -14,17 +14,19 @@
   flex-direction: column;
 }
 
+form {
+  background-color: rgba(15, 168, 168, 0.123);
+  min-width: 550px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+
 footer,
 header {
   text-align: center;
 }
 
-nav {
-  user-select: none;
-  background-color: rgba(226, 136, 136, 0.534);
-  padding: 20px;
-  color: white;
-}
 
 footer {
   margin-top: auto;
@@ -34,11 +36,7 @@ footer {
 }
 
 footer a,
-nav a {
-  color: lightseagreen;
-  text-decoration: none;
-  font-size: 24px;
-}
+
 
 a:hover {
   color: blue;
@@ -88,7 +86,7 @@ a:hover {
 }
 
 .book-author {
-  margin-top: 25px;
+  margin-top: 22px;
   text-align: right;
 }
 

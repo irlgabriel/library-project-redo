@@ -53,36 +53,41 @@ export default class CreateBook extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.onSubmit} className="w-25 mx-auto p-3 bg-light">
-        <h3 className="text-center font-weight-bold">Add a new Book!</h3>
-        <div className="form-group">
+      <form onSubmit={this.onSubmit} className="row flex-wrap w-50 mx-auto p-3">
+        <h3 className="text-center font-weight-bold col-12">Add a new Book!</h3>
+        <div className="form-group col-6">
+          <label htmlFor="title">Book Title</label>
           <input
             className="form-control"
             type="text"
             name="title"
+            placeholder="e.g. Man's Search for Reason"
             onChange={this.onChangeTitle}
-            placeholder="Book title.."
           ></input>
         </div>
-        <div className="form-group">
+        <div className="form-group col-6">
+          <label htmlFor="author">Book Author</label>
           <input
             className="form-control"
             type="text"
             name="author"
+            placeholder="e.g. Viktor E. Frankl"
             onChange={this.onChangeAuthor}
-            placeholder="Book author.."
           ></input>
         </div>
-        <div className="form-group">
+        <div className="form-group col-4 mx-auto">
+          <label htmlFor="pages">Number of Pages</label>
           <input
             className="form-control"
             type="number"
+            min="0"
+            max="10001"
             name="pages"
+            placeholder="1"
             onChange={this.onChangePages}
-            placeholder="Number of pages(1-10000)"
           ></input>
         </div>
-        <div className="form-group">
+        <div className="form-group text-center col-12">
           <button className="btn btn-outline-white btn-success" type="submit">
             Add Book
           </button>

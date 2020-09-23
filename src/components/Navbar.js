@@ -8,19 +8,18 @@ export default class Navbar extends React.Component {
         <Link to="/" className="navbar-brand">
           Home
         </Link>
-        <div className="collapse navbar-collapse">
-          <ul className="navbar-nav mr-auto">
-            <li className="navbar-item">
-              <Link to="/" className="nav-link">
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div className="navbar-nav">
+              <Link to="/" className="nav-link active">
                 Library
               </Link>
-            </li>
-            <li className="navbar-item">
               <Link to="/create" className="nav-link">
                 Create Book
               </Link>
-            </li>
-          </ul>
+          </div>
         </div>
       </nav>
     );

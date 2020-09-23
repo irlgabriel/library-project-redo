@@ -9,6 +9,7 @@ export default class Library extends React.Component {
     this.state = {
       books: [],
     };
+
   }
 
   componentDidMount() {
@@ -22,10 +23,13 @@ export default class Library extends React.Component {
   render() {
     return (
       <div className="library mx-auto w-100">
-        <h3 className="text-center w-100">Library</h3>
+        <h2 className="text-center w-100">Library</h2>
         {this.state.books.map((book) => (
           <Book
             key={book._id}
+            books={this.state.books}
+            setState={this.setState}
+            book={book}
             title={book.title}
             author={book.author}
             pages={book.pages}
