@@ -6,7 +6,7 @@ import BookForm from "./components/BookForm"
 import Library from "./components/Library"
 
 function App() {
-  const [books, setBooks] = useState([{id: 1, title: "Man's search for reason", author: "Viktor E. Frankl", pages: 350, readStatus: "read"}])
+  const [books, setBooks] = useState([])
   return (
     <div className="App">
       <Header />

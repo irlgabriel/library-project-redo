@@ -62,6 +62,10 @@ input:focus {
   border: 2px solid lightgray;
 }
 
+select {
+  padding: 5px;
+}
+
 button {
   padding: 7px;
   border-radius: 3px;
@@ -129,7 +133,7 @@ button:hover {
 }
 
 .fa-book-open {
-  color:green;
+  display: inline-block;
 }
 
 .fa-trash {

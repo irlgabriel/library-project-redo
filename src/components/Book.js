@@ -5,11 +5,14 @@ function Book(props) {
     props.setBooks(props.books.map(book => {
       if(book.id === props.book.id) {
         return {...book, readStatus: book.readStatus === "read" ? "unread" : "read"}
-      } 
+      } else {
+        return {...book}
+      }
     }))
     const btn = e.target;
     btn.style.color = btn.style.color !== 'red' ? 'red' : 'green'; 
   }
+
   function deleteHandler(e) {
     props.setBooks(props.books.filter(book => book.id != props.book.id))
   }
