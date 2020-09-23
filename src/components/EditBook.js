@@ -6,6 +6,6 @@ export default class EditBook extends React.Component {
       <div className="edit-book">
         <p>This is the EditBook component</p>
       </div>
-    )
+    );
   }
 }
