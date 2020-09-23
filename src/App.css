@@ -8,6 +8,82 @@ Footer, Header {
   text-align: center;
 }
 
+Header {  
+  background-color: rgb(231, 133, 133);
+  padding: 20px;
+  color: white;
+}
+
 Footer {
   margin-top: auto;
+  padding: 20px;
+  background-color: rgba(79, 248, 220, 0.103);
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 650px;
+  min-width: 500px;
+  margin: 10px auto;
+  padding: 10px;
+  background-color: #f3f3f3;
+}
+
+form input {
+  width: 100%;
+  padding: 3px;
+  border-radius: 4px;
+  border: 1px solid lightgray;
+  margin-top: 5px;
+}
+
+label {
+  display: inline-block;
+}
+
+.form-group {
+  text-align: center;
+  padding: 5px 0;
+  width: 33%;
+}
+
+button {
+  padding: 7px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+}
+
+.library {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px;
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  border-radius: 5px;
+  height: 400px;
+  width: 300px;
+  background-color: lightgoldenrodyellow;
+}
+
+.book-title {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.book-author {
+  margin-top: 25px;
+  text-align: right;
+}
+
+.book-pages {
+  margin-top: auto;
+  text-align: center;
 }

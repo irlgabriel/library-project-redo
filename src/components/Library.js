@@ -4,11 +4,15 @@ import Book from "./Book"
 class Library extends React.Component {
   constructor(props) {
     super(props);
-    this.books = [];
+    this.state = {
+      books: [{title: "Man's search for reason", author: "Viktor E. Frankl", pages: 350}],
+    }
   }
   render() {
     return(
-      this.books.map(book => <Book />)
+      <div className="library">
+        {this.state.books.map(book => <Book book={book}/>)}
+      </div>
     )
   }
 }
