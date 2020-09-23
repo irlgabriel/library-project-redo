@@ -1,5 +1,5 @@
 import React from "react";
-import Axios from "axios";
+import axios from "axios";
 
 export default class Book extends React.Component {
   constructor(props) {
@@ -10,7 +10,7 @@ export default class Book extends React.Component {
 
   deleteHandler() {
     const bookId = this.props.book._id
-    Axios.delete(`http://localhost:5000/books/${bookId}`)
+    axios.delete(`http://localhost:5000/books/${bookId}`)
       .then(window.location = "/")
       .catch(err => console.log(err.response.data))
   }
@@ -19,7 +19,7 @@ export default class Book extends React.Component {
   statusHandler() {
     const bookId = this.props.book._id
     const book = {...this.props.book, status: this.props.status === "read" ? "unread" : "read"}
-    Axios.post(`http://localhost:5000/books/update/${bookId}`, book)
+    axios.post(`http://localhost:5000/books/update/${bookId}`, book)
       .then(console.log(book))
       .catch(err => console.log(err.response.data))
   }

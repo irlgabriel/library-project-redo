@@ -58,9 +58,7 @@ export default class CreateBook extends React.Component {
         console.log(res.data)
         window.location = "/"
       })
-      .catch((err) => {
-        console.log(err)
-      })
+      .catch(err => console.log(err.response.data))
 
   }
 
@@ -107,7 +105,7 @@ export default class CreateBook extends React.Component {
           ></input>
         </div>
         <div className="form-group col-12">
-          <select onChange={this.onChangeStatus} defaultValue="unread">
+          <select name="status" onChange={this.onChangeStatus} defaultValue="unread">
             <option value="read">Read</option>
             <option value="unread">Unread</option>
           </select>
