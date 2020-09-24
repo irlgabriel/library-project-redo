@@ -5,8 +5,7 @@ import Book from "./Book";
 
 export default function Library() {
   const [books, setBooks] = useState([]);
-  const [sortBy, setSortBy] = useState("all");
-  const [filteredBooks, setFilteredBooks] = useState([]);
+
 
   // Equivalent with ComponentDidMount()
   useEffect(() => {
@@ -23,11 +22,6 @@ export default function Library() {
 
   function sortHandler(e) {
     setSortBy(e.target.value);
-    if(sortBy === "all") {
-      setFilteredBooks(books);
-    } else {
-      setFilteredBooks(books.filter(book => book.status === sortBy))
-    }
   }
 
   return (
