@@ -6,7 +6,7 @@ import Book from "./Book";
 export default function Library() {
   const [books, setBooks] = useState([]);
   const [sortBy, setSortBy] = useState("all");
-  const [filteredBooks, setFilteredBooks] = useState(books);
+  const [filteredBooks, setFilteredBooks] = useState([]);
 
   // Equivalent with ComponentDidMount()
   useEffect(() => {
@@ -23,13 +23,10 @@ export default function Library() {
 
   function sortHandler(e) {
     setSortBy(e.target.value);
-    switch (sortBy) {
-      case "all":
-        setFilteredBooks(books);
-        break;
-      default:
-        setFilteredBooks(books.filter((book) => book.status !== sortBy));
-        break;
+    if(sortBy === "all") {
+      setFilteredBooks(books);
+    } else {
+      setFilteredBooks(books.filter(book => book.status === sortBy))
     }
   }
 
@@ -57,10 +54,10 @@ export default function Library() {
           </select>
         </div>
       </div>
-      {filteredBooks.map((book) => (
+      {books.map((book) => (
         <Book
           key={book._id}
-          books={filteredBooks}
+          books={books}
           setBooks={setBooks}
           book={book}
         />

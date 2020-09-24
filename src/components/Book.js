@@ -9,20 +9,23 @@ export default function Book(props) {
       )
     ) {
       const bookId = props.book._id;
+
+      props.setBooks(props.books.filter(book => book._id !== bookId))
+
       axios
         .delete(`http://localhost:5000/books/${bookId}`)
-        .then((window.location = "/"))
+        .then(console.log("Book deleted!"))
         .catch((err) => console.log(err.response.data));
     }
   }
 
-  // Doesn't seem to do anything on the back end side!
   function statusHandler() {
     const bookId = props.book._id;
     const newBook = {
       ...props.book,
       status: props.book.status === "read" ? "unread" : "read",
     };
+
     props.setBooks(
       props.books.map((book) => {
         if (book._id === props.book._id) {
@@ -32,11 +35,10 @@ export default function Book(props) {
         }
       })
     );
-    console.log(props.books);
 
     axios
       .post(`http://localhost:5000/books/update/${bookId}`, newBook)
-      .then(console.log(newBook))
+      .then(console.log(`Book status modified`))
       .catch((err) => console.log(err.response.data));
   }
   return (
