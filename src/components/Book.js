@@ -34,7 +34,7 @@ export default function Book(props) {
     <div className={`book${props.book.status === "read" ? " book-read" : ""}`}>
       <h3 className="book-title">{props.book.title}</h3>
       <h5 className="book-author">{props.book.author}</h5>
-      <p className="book-pages">{props.book.pages}</p>
+      <p className="book-pages">{props.book.pages}p.</p>
       <div onClick={deleteHandler} className="fas fa-trash"></div>
       <div onClick={statusHandler} style={{color: props.book.status === "unread" ? 'red' : 'green'}} className="fas fa-book-open"></div>
       <div className="status-div">

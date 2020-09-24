@@ -106,17 +106,20 @@ input:focus:valid {
   color: red;
 }
 .book-title {
+  color: rgba(105, 175, 40, 0.767);
   margin-top: 5px;
   text-align: center;
 }
 
 .book-author {
+  color: rgb(255, 115, 0);
   margin-top: 22px;
   text-align: right;
 }
 
 .book-pages {
   margin-top: auto;
+  margin-bottom: 35px;
   text-align: center;
   font-weight: bold;
 }
@@ -126,8 +129,16 @@ label {
 }
 
 .fa-book-open {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
   display: inline-block;
-  font-size: 20px;
+  font-size: 25px;
+  transition: all 0.5s ease-in-out;
+}
+
+.fa-book-open:hover {
+  transform: scale(1.2);
 }
 
 .fa-trash {
@@ -136,11 +147,11 @@ label {
   font-size: 25px;
   bottom: 15px;
   right: 15px;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .fa-trash:hover {
-  transform: rotate(45deg);
+  transform: rotate(45deg) scale(1.2);
   color: red;
 }
 
