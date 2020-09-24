@@ -12,7 +12,7 @@ router.route("/add").post((req, res) => {
   const author = req.body.author;
   const pages = req.body.pages;
   const status = req.body.status;
-  const newBook = new Book({ title, author, pages, status});
+  const newBook = new Book({ title, author, pages, status });
 
   newBook
     .save()

@@ -1,4 +1,4 @@
-import React, { useState}  from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 export default function CreateBook() {
@@ -8,46 +8,47 @@ export default function CreateBook() {
   const [status, setStatus] = useState("");
 
   function onChangeTitle(e) {
-    setTitle(e.target.value)
+    setTitle(e.target.value);
   }
 
   function onChangeAuthor(e) {
-    setAuthor(e.target.value)
+    setAuthor(e.target.value);
   }
 
   function onChangePages(e) {
-    setPages(e.target.value)
+    setPages(e.target.value);
   }
 
   function onChangeStatus(e) {
-    setStatus(e.target.value)
+    setStatus(e.target.value);
   }
 
   function onSubmit(e) {
     e.preventDefault();
 
     const book = {
-      title: this.state.title,
-      author: this.state.author,
-      pages: this.state.pages,
-      status: this.state.status,
+      title,
+      author,
+      pages,
+      status,
     };
 
     axios
       .post("http://localhost:5000/books/add", book)
       .then((res) => {
-        console.log(res.data)
-        window.location = "/"
+        console.log(res.data);
+        window.location = "/";
       })
-      .catch(err => console.log(err.response.data))
-
+      .catch((err) => console.log(err.response.data));
   }
 
   return (
     <form onSubmit={onSubmit} className="row flex-wrap w-50 mx-auto p-3">
       <h3 className="text-center font-weight-bold col-12">Add a new Book!</h3>
       <div className="form-group col-6">
-        <label htmlFor="title">Book Title<em>(5-30 characters long)</em></label>
+        <label htmlFor="title">
+          Book Title<em>(5-30 characters long)</em>
+        </label>
         <input
           className="form-control"
           minLength="5"
@@ -60,7 +61,9 @@ export default function CreateBook() {
         ></input>
       </div>
       <div className="form-group col-6">
-        <label htmlFor="author">Book Author<em>(5-30 characters long)</em></label>
+        <label htmlFor="author">
+          Book Author<em>(5-30 characters long)</em>
+        </label>
         <input
           minLength="5"
           maxLength="30"
@@ -73,7 +76,9 @@ export default function CreateBook() {
         ></input>
       </div>
       <div className="form-group col-4 mx-auto">
-        <label htmlFor="pages">No. of Pages<em>(1-10000)</em></label>
+        <label htmlFor="pages">
+          No. of Pages<em>(1-10000)</em>
+        </label>
         <input
           className="form-control"
           required

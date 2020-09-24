@@ -24,7 +24,6 @@ form {
   margin-top: 10px;
 }
 
-
 footer,
 header {
   text-align: center;
@@ -82,7 +81,7 @@ input:focus:valid {
   opacity: 0.55;
 }
 
-.status-div{
+.status-div {
   position: absolute;
   bottom: 0;
   left: 30%;
@@ -91,7 +90,6 @@ input:focus:valid {
   background-color: rgba(255, 255, 255, 0.411);
   width: 40%;
   text-align: center;
-
 }
 
 .status-div p {
@@ -119,6 +117,7 @@ input:focus:valid {
 
 .book-pages {
   margin-top: auto;
+  color: black;
   margin-bottom: 35px;
   text-align: center;
   font-weight: bold;
@@ -142,6 +141,7 @@ label {
 }
 
 .fa-trash {
+  color: burlywood;
   display: inline-block;
   position: absolute;
   font-size: 25px;
@@ -157,6 +157,10 @@ label {
 
 button:focus {
   outline: none;
+}
+
+#sort-by-label {
+  font-size: 20px;
 }
 
 @media only screen and (min-width: 600px) {

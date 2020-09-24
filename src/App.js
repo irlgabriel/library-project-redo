@@ -8,7 +8,7 @@ import Navbar from "./components/Navbar";
 import Library from "./components/Library";
 import CreateBook from "./components/CreateBook";
 import EditBook from "./components/EditBook";
-import Footer from "./components/Footer"
+import Footer from "./components/Footer";
 
 function App() {
   return (
