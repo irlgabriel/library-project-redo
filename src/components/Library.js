@@ -5,7 +5,8 @@ import Book from "./Book";
 
 export default function Library() {
   const [books, setBooks] = useState([]);
-
+  const [filteredBooks, setFilteredBooks] = useState([])
+  const [status, setStatus] = useState("all")
 
   // Equivalent with ComponentDidMount()
   useEffect(() => {
@@ -13,15 +14,23 @@ export default function Library() {
       .get("http://localhost:5000/books/")
       .then((res) => {
         setBooks(res.data);
-        setFilteredBooks(res.data);
       })
       .catch((err) => {
         console.log(err.response.data);
       });
   }, []);
 
-  function sortHandler(e) {
-    setSortBy(e.target.value);
+  function filterHandler(e) {
+    setStatus(e.target.value)
+    switch(status) {
+      case "all":
+        setFilteredBooks(books)
+        break;
+      default: 
+        setFilteredBooks(books.filter(book => book.status === status))
+        break;
+    }
+    
   }
 
   return (
@@ -37,10 +46,10 @@ export default function Library() {
             Sort By
           </label>
           <select
-            onChange={sortHandler}
             className="mx-auto"
             name="sort-books-by"
             defaultValue="all"
+            onChange={filterHandler}
           >
             <option value="all">All</option>
             <option value="unread">Unread</option>

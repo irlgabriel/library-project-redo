@@ -27,6 +27,9 @@ export default class Navbar extends React.Component {
             <Link to="/create" className="nav-link">
               Create Book
             </Link>
+            <Link to="/login" className="nav-link">
+              Login
+            </Link>
           </div>
         </div>
       </nav>

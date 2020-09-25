@@ -8,7 +8,8 @@ import Navbar from "./components/Navbar";
 import Library from "./components/Library";
 import CreateBook from "./components/CreateBook";
 import EditBook from "./components/EditBook";
-import Footer from "./components/Footer";
+import LoginUser from "./components/LoginUser";
+import Footer from "./components/Footer"
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" exact component={Library} />
         <Route path="/create" component={CreateBook} />
         <Route path="/edit/:id" component={EditBook} />
+        <Route path="/login" component={LoginUser} />
         <Footer />
       </div>
     </Router>
