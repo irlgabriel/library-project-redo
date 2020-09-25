@@ -1,9 +1,0 @@
-POST http://localhost:5000/books/add
-
-{
-  "title": "The Glass Castle",
-  "author": "Jeannette Walls",
-  "pages": "456",
-  "status": "unread"
-}
-
