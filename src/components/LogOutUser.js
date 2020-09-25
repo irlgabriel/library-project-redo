@@ -13,7 +13,7 @@ export default function LogOutUser() {
   }, [])
   return(
     <div>
-      <p>Logging out</p>
+      <p>I hate firebase auth!</p>
     </div>
   )
 }
