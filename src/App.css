@@ -18,9 +18,14 @@
 
 form {
   min-width: 550px;
+  max-width: 70%;
   border-radius: 10px;
   text-align: center;
   margin-top: 10px;
+}
+
+form:nth-child() {
+  width: 100%;
 }
 
 footer,
@@ -152,6 +157,10 @@ label {
 .fa-trash:hover {
   transform: rotate(45deg) scale(1.2);
   color: red;
+}
+
+.hide {
+  display: none !important;
 }
 
 button:focus {

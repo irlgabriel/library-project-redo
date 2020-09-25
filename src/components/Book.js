@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "axios";
+import firebase from "firebase"
 
 export default function Book(props) {
   function deleteHandler() {
@@ -8,15 +8,9 @@ export default function Book(props) {
         "Are you sure you want to delete this book? This action cannot be undone."
       )
     ) {
-      const bookId = props.book._id;
 
-      props.setBooks(props.books.filter(book => book._id !== bookId))
-
-      axios
-        .delete(`http://localhost:5000/books/${bookId}`)
-        .then(console.log("Book deleted!"))
-        .catch((err) => console.log(err.response.data));
     }
+
   }
 
   function statusHandler() {
@@ -36,10 +30,8 @@ export default function Book(props) {
       })
     );
 
-    axios
-      .post(`http://localhost:5000/books/update/${bookId}`, newBook)
-      .then(console.log(`Book status modified`))
-      .catch((err) => console.log(err.response.data));
+
+
   }
   return (
     <div className={`book${props.book.status === "read" ? " book-read" : ""}`}>
