@@ -7,13 +7,14 @@ export default function LogOutUser() {
     firebase.auth().signOut()
       .then(() => {
         console.log(firebase.auth.currentUser)
-        window.location('/');
+        window.location = '/';
       })
       .catch((err) => console.log(err.message))
   }, [])
   return(
     <div>
-      <p>I hate firebase auth!</p>
+      
+      <p>Replace with logout animation</p>
     </div>
   )
 }
