@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import GlobalStyles, { MainContainer } from "./globalStyles";
 
 // Import components
-import Navbar from "./components/Navbar/Navbar";
-import Library from "./components/Library/Library";
-import LogInUser from "./components/LoginForm/LoginForm";
-import Footer from "./components/Footer/Footer";
-import SignInUser from "./components/SignUpForm/SignUpForm";
+import { Navbar } from "./components";
+import { Library } from "./components";
+import { LoginForm } from "./components";
+import { Footer } from "./components";
+import { SignUpForm } from "./components";
 
 function App() {
   return (
@@ -16,8 +16,8 @@ function App() {
         <GlobalStyles />
         <Navbar />
         <Route path="/" exact component={Library} />
-        <Route path="/login" component={LogInUser} />
-        <Route path="/sign-up" component={SignInUser} />
+        <Route path="/login" component={LoginForm} />
+        <Route path="/sign-up" component={SignUpForm} />
         <Footer />
       </Router>
     </MainContainer>
