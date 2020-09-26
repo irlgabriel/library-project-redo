@@ -36,7 +36,7 @@ export default function Navbar(props) {
           <MobileIcon onClick={handleClick} click={click}>
             {click ? <FaTimes /> : <FaBars />}
           </MobileIcon>
-          <NavMenu click={click}>
+          <NavMenu bgLightMenu click={click}>
             <NavItem>
               <NavLink onClick={closeMobileMenu} to="/">
                 Library

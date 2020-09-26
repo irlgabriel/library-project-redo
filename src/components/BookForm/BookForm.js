@@ -40,7 +40,7 @@ export default function CreateBook(props) {
 
   return (
     <Form onSubmit={onSubmit}>
-      <FormHeader>Add a new Book!</FormHeader>
+      <FormHeader>Add a new Book</FormHeader>
       <FormGroup>
         <FormLabel htmlFor="title">Book Title</FormLabel>
         <FormInput

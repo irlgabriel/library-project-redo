@@ -6,8 +6,10 @@ export const Form = styled.form`
   margin: auto;
   margin-top: 10px;
   padding: 0 2rem;
+  width: 800px;
   justify-content: space-between;
   @media screen and (max-width: 768px) {
+    width: auto;
     flex-direction: column;
   }
 `;
@@ -22,7 +24,9 @@ export const FormGroup = styled.div`
   }
 `;
 
-export const FormHeader = styled.h3`
+export const FormHeader = styled.p`
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-transform: uppercase;
   width: 100%;
   text-align: center;
 `;

@@ -28,6 +28,7 @@ export const NavMenu = styled.ul`
   list-style: none;
   align-items: center;
   text-align: center;
+  color: ${({ bgLightMenu }) => (bgLightMenu ? "white" : "black")};
   @media screen and (max-width: 960px) {
     display: flex;
     flex-direction: column;
@@ -69,7 +70,7 @@ export const NavbarContainer = styled(Container)`
 export const NavLink = styled(Link)`
   text-decoration: none;
   font-size: 1.5rem;
-  color: ${({ textLight }) => (textLight ? "white" : "black")};
+  
 `;
 
 export const MobileIcon = styled.div`
