@@ -38,15 +38,15 @@ export default function Navbar(props) {
           </MobileIcon>
           <NavMenu click={click}>
             <NavItem>
-              <NavLink to="/">Library</NavLink>
+              <NavLink onClick={closeMobileMenu} to="/">Library</NavLink>
             </NavItem>
 
             <NavItem>
-              <NavLink to="/sign-up">Sign Up</NavLink>
+              <NavLink onClick={closeMobileMenu} to="/sign-up">Sign Up</NavLink>
             </NavItem>
 
             <NavItem>
-              <NavLink to="/login">Log In</NavLink>
+              <NavLink onClick={closeMobileMenu} to="/login">Log In</NavLink>
             </NavItem>
           </NavMenu>
         </NavbarContainer>

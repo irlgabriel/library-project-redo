@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import firebase from "firebase";
-import { FormGroup, Form, FormHeader, FormLabel, FormInput, Button } from "./BookForm.elements"
+import { FormGroup, Form, FormHeader, FormLabel, FormInput, Button } from "../Form/Form.elements"
 
 export default function CreateBook(props) {
   const [title, setTitle] = useState("");
