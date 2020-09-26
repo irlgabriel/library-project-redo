@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import firebase from "firebase"
+import firebase from "firebase";
 
 export default function CreateBook(props) {
   const [title, setTitle] = useState("");
@@ -27,17 +27,26 @@ export default function CreateBook(props) {
       pages,
       status,
     };
-    const uid = props.user ? props.user.uid : ""
-    firebase.firestore().collection('Users' + uid).add(book);
-    props.setBooks();
+    const uid = props.user ? props.user.uid : "";
+    firebase
+      .firestore()
+      .collection("Books" + uid)
+      .add(book)
+      .then((docRef) => {
+        props.setBooks([...props.books, book]);
+      })
+      .catch((err) => console.log(err.message));
   }
 
   return (
-    <form onSubmit={onSubmit} className="row flex-wrap mx-auto p-3 align-items-center">
+    <form
+      onSubmit={onSubmit}
+      className="row flex-wrap mx-auto p-3 align-items-center"
+    >
       <h3 className="text-center font-weight-bold col-12">Add a new Book!</h3>
       <div className="text-left form-group col-4">
         <label className="font-weight-bold" htmlFor="title">
-          Book Title<em>(5-30 characters)</em>
+          Book Title
         </label>
         <input
           className="form-control"
@@ -52,7 +61,7 @@ export default function CreateBook(props) {
       </div>
       <div className="text-left form-group col-4">
         <label className="font-weight-bold" htmlFor="author">
-          Book Author<em>(5-30 characters)</em>
+          Book Author
         </label>
         <input
           minLength="5"
@@ -81,7 +90,9 @@ export default function CreateBook(props) {
         ></input>
       </div>
       <div className="text-left form-group col-2">
-        <label className="font-weight-bold" htmlFor="status">Status</label>
+        <label className="font-weight-bold" htmlFor="status">
+          Status
+        </label>
         <br />
         <select name="status" onChange={onChangeStatus} defaultValue="unread">
           <option value="read">Read</option>

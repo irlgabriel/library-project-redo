@@ -1,13 +1,9 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-
 export default function Navbar(props) {
-
   // ComponentDidMount
-  useEffect(() => {
-    
-  }, [])
+  useEffect(() => {}, []);
 
   return (
     <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
@@ -30,14 +26,17 @@ export default function Navbar(props) {
           <Link to="/" className="nav-link">
             My Library
           </Link>
-          
+
           <Link to="/login" className={`nav-link ${props.user ? "hide" : ""}`}>
             Login
           </Link>
           <Link to="/logout" className={`nav-link ${props.user ? "" : "hide"}`}>
             Logout
           </Link>
-          <Link to="/sign-up" className={`nav-link ${props.user ? "hide" : ""}`}>
+          <Link
+            to="/sign-up"
+            className={`nav-link ${props.user ? "hide" : ""}`}
+          >
             Sign Up
           </Link>
         </div>

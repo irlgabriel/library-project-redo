@@ -1,5 +1,5 @@
 import React from "react";
-import firebase from "firebase"
+import firebase from "firebase";
 
 export default function Book(props) {
   function deleteHandler() {
@@ -8,13 +8,14 @@ export default function Book(props) {
         "Are you sure you want to delete this book? This action cannot be undone."
       )
     ) {
-
     }
-
   }
 
   function statusHandler() {
-    firebase.firestore().collection(`Users${props.user ? props.user.uid : ""}`).doc()
+    firebase
+      .firestore()
+      .collection(`Books${props.user ? props.user.uid : ""}`)
+      .doc(); // FIGURE HOW TO ASSIGN AN ID
     const newBook = {
       ...props.book,
       status: props.book.status === "read" ? "unread" : "read",
@@ -29,9 +30,6 @@ export default function Book(props) {
         }
       })
     );
-
-
-
   }
   return (
     <div className={`book${props.book.status === "read" ? " book-read" : ""}`}>
