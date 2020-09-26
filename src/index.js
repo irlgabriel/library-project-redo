@@ -16,4 +16,5 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
+
 ReactDOM.render(<App />, document.querySelector("#root"));

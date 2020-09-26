@@ -14,7 +14,7 @@ export default function Book(props) {
   }
 
   function statusHandler() {
-    const bookId = props.book._id;
+    firebase.firestore().collection(`Users${props.user ? props.user.uid : ""}`).doc()
     const newBook = {
       ...props.book,
       status: props.book.status === "read" ? "unread" : "read",

@@ -1,28 +1,23 @@
 import React, { useState } from "react";
 import firebase from "firebase"
 
-export default function CreateBook() {
+export default function CreateBook(props) {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [pages, setPages] = useState(0);
   const [status, setStatus] = useState("");
-
   function onChangeTitle(e) {
     setTitle(e.target.value);
   }
-
   function onChangeAuthor(e) {
     setAuthor(e.target.value);
   }
-
   function onChangePages(e) {
     setPages(e.target.value);
   }
-
   function onChangeStatus(e) {
     setStatus(e.target.value);
   }
-
   function onSubmit(e) {
     e.preventDefault();
 
@@ -32,15 +27,9 @@ export default function CreateBook() {
       pages,
       status,
     };
-
-    console.log(book)
-
-    const bookRef = firebase.database().ref("Users/default/Books").push();
-    book.id = bookRef.key;
-
-    bookRef.set(book);
-  
-
+    const uid = props.user ? props.user.uid : ""
+    firebase.firestore().collection('Users' + uid).add(book);
+    props.setBooks();
   }
 
   return (

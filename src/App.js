@@ -8,7 +8,6 @@ import firebase from "firebase"
 // Import components
 import Navbar from "./components/Navbar";
 import Library from "./components/Library";
-import EditBook from "./components/EditBook";
 import LogInUser from "./components/LoginUser";
 import Footer from "./components/Footer"
 import SignInUser from "./components/SignUpUser"
@@ -30,8 +29,7 @@ function App() {
       <div className="container-fluid" id="main-container">
         <Navbar user={user}/>
         <br />
-        <Route path="/" exact component={Library} />
-        <Route path="/edit/:id" component={EditBook} />
+        <Route path="/" exact component={() => <Library user={user} />} />
         <Route path="/login" component={LogInUser} />
         <Route path="/sign-up" component={SignInUser} />
         <Route path="/logout" component={LogOutUser} />
