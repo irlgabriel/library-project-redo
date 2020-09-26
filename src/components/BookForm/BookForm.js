@@ -39,17 +39,11 @@ export default function CreateBook(props) {
   }
 
   return (
-    <form
-      onSubmit={onSubmit}
-      className="row flex-wrap mx-auto p-3 align-items-center"
-    >
-      <h3 className="text-center font-weight-bold col-12">Add a new Book!</h3>
-      <div className="text-left form-group col-4">
-        <label className="font-weight-bold" htmlFor="title">
-          Book Title
-        </label>
+    <form onSubmit={onSubmit}>
+      <h3>Add a new Book!</h3>
+      <div>
+        <label htmlFor="title">Book Title</label>
         <input
-          className="form-control"
           minLength="5"
           maxLength="50"
           type="text"
@@ -59,14 +53,11 @@ export default function CreateBook(props) {
           onChange={onChangeTitle}
         ></input>
       </div>
-      <div className="text-left form-group col-4">
-        <label className="font-weight-bold" htmlFor="author">
-          Book Author
-        </label>
+      <div>
+        <label htmlFor="author">Book Author</label>
         <input
           minLength="5"
           maxLength="30"
-          className="form-control"
           type="text"
           name="author"
           required
@@ -74,12 +65,9 @@ export default function CreateBook(props) {
           onChange={onChangeAuthor}
         ></input>
       </div>
-      <div className="text-left form-group col-2 mx-auto">
-        <label className="font-weight-bold" htmlFor="pages">
-          Pages
-        </label>
+      <div>
+        <label htmlFor="pages">Pages</label>
         <input
-          className="form-control"
           required
           type="number"
           placeholder="e.g. 123"
@@ -89,20 +77,16 @@ export default function CreateBook(props) {
           onChange={onChangePages}
         ></input>
       </div>
-      <div className="text-left form-group col-2">
-        <label className="font-weight-bold" htmlFor="status">
-          Status
-        </label>
+      <div>
+        <label htmlFor="status">Status</label>
         <br />
-        <select name="status" onChange={onChangeStatus} defaultValue="unread">
+        <select name="status" defaultValue="unread">
           <option value="read">Read</option>
           <option value="unread">Unread</option>
         </select>
       </div>
-      <div className="form-group text-center col-12">
-        <button className="btn btn-outline-white btn-dark" type="submit">
-          Add Book
-        </button>
+      <div>
+        <button type="submit">Add Book</button>
       </div>
     </form>
   );

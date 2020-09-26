@@ -18,10 +18,10 @@ export default function SignUpUser() {
       });
   }
   return (
-    <div className="sign-up  mx-auto w-50">
-      <h1 className="text-center w-100">Sign Up</h1>
-      <form className="mx-auto" onSubmit={submitHandler}>
-        <div className="text-left font-weight-bold form-group">
+    <div>
+      <h1>Sign Up</h1>
+      <form onSubmit={submitHandler}>
+        <div>
           <label htmlFor="email">Email</label>
           <input
             placeholder="Email"
@@ -29,10 +29,9 @@ export default function SignUpUser() {
             minLength="6"
             type="email"
             name="email"
-            className="form-control"
           ></input>
         </div>
-        <div className="text-left font-weight-bold form-group">
+        <div>
           <label htmlFor="password">Password</label>
           <input
             placeholder="********"
@@ -40,13 +39,10 @@ export default function SignUpUser() {
             minLength="6"
             type="password"
             name="password"
-            className="form-control"
           ></input>
         </div>
-        <div className="form-group">
-          <button type="submit" className="btn btn-info">
-            Sign Up
-          </button>
+        <div>
+          <button type="submit">Sign Up</button>
         </div>
       </form>
     </div>
