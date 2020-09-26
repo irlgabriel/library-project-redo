@@ -52,7 +52,7 @@ export const NavItem = styled.li`
 
   @media screen and (max-width: 960px) {
     width: 100%;
-    
+    justify-content: center;
     &:hover {
       border: none;
     }
@@ -70,6 +70,7 @@ export const NavbarContainer = styled(Container)`
 export const NavLink = styled(Link)`
   text-decoration: none;
   font-size: 1.5rem;
+  color: ${({textLight}) => (textLight ? 'white' : 'black')};
 `
 
 export const MobileIcon = styled.div`

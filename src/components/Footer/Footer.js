@@ -1,14 +1,15 @@
 import React from "react";
+import { FooterContainer, FooterHeader, FooterLink } from "./Footer.elements"
 
 export default class Footer extends React.Component {
   render() {
     return (
-      <footer>
-        <h3>
-          This project was built using <a href="https://reactjs.org/">React</a>.
-        </h3>
-        <a href="https://github.com/irlgabriel">Github</a>
-      </footer>
+      <FooterContainer>
+        <FooterHeader>
+          This project was built using <FooterLink href="https://reactjs.org/">React</FooterLink>
+        </FooterHeader>
+        <FooterLink href="https://github.com/irlgabriel">Github</FooterLink>
+      </FooterContainer>
     );
   }
 }

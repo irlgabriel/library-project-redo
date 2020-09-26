@@ -1,14 +1,16 @@
 import React from "react";
-import Book from "../Book/Book";
-import firebase from "firebase";
 import BookForm from "../BookForm/BookForm";
+import { Container } from "../../globalStyles"
+import { LibraryHeader } from "./Library.elements"
 
 export default function Library(props) {
 
   return (
-    <div>
+    <Container>
       <BookForm />
-      <h2>Library</h2>
-    </div>
+        <LibraryHeader>
+          Library
+        </LibraryHeader>
+    </Container>
   );
 }

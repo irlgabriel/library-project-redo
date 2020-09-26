@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import firebase from "firebase";
+import { FormGroup, Form, FormHeader, FormLabel, FormInput, Button } from "./BookForm.elements"
 
 export default function CreateBook(props) {
   const [title, setTitle] = useState("");
@@ -27,23 +28,15 @@ export default function CreateBook(props) {
       pages,
       status,
     };
-    const uid = props.user ? props.user.uid : "";
-    firebase
-      .firestore()
-      .collection("Books" + uid)
-      .add(book)
-      .then((docRef) => {
-        props.setBooks([...props.books, book]);
-      })
-      .catch((err) => console.log(err.message));
+
   }
 
   return (
-    <form onSubmit={onSubmit}>
-      <h3>Add a new Book!</h3>
-      <div>
-        <label htmlFor="title">Book Title</label>
-        <input
+    <Form onSubmit={onSubmit}>
+      <FormHeader>Add a new Book!</FormHeader>
+      <FormGroup>
+        <FormLabel htmlFor="title">Book Title</FormLabel>
+        <FormInput
           minLength="5"
           maxLength="50"
           type="text"
@@ -51,11 +44,11 @@ export default function CreateBook(props) {
           name="title"
           placeholder="e.g. Man's Search for Reason"
           onChange={onChangeTitle}
-        ></input>
-      </div>
-      <div>
-        <label htmlFor="author">Book Author</label>
-        <input
+        ></FormInput>
+      </FormGroup>
+      <FormGroup>
+        <FormLabel htmlFor="author">Book Author</FormLabel>
+        <FormInput
           minLength="5"
           maxLength="30"
           type="text"
@@ -63,11 +56,11 @@ export default function CreateBook(props) {
           required
           placeholder="e.g. Viktor E. Frankl"
           onChange={onChangeAuthor}
-        ></input>
-      </div>
-      <div>
-        <label htmlFor="pages">Pages</label>
-        <input
+        ></FormInput>
+      </FormGroup>
+      <FormGroup>
+        <FormLabel htmlFor="pages">Pages</FormLabel>
+        <FormInput
           required
           type="number"
           placeholder="e.g. 123"
@@ -75,19 +68,19 @@ export default function CreateBook(props) {
           max="10001"
           name="pages"
           onChange={onChangePages}
-        ></input>
-      </div>
-      <div>
-        <label htmlFor="status">Status</label>
+        ></FormInput>
+      </FormGroup>
+      <FormGroup>
+        <FormLabel htmlFor="status">Status</FormLabel>
         <br />
         <select name="status" defaultValue="unread">
           <option value="read">Read</option>
           <option value="unread">Unread</option>
         </select>
-      </div>
-      <div>
-        <button type="submit">Add Book</button>
-      </div>
-    </form>
+      </FormGroup>
+      <FormGroup>
+        <Button type="submit">Add Book</Button>
+      </FormGroup>
+    </Form>
   );
 }

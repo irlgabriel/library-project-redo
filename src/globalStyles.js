@@ -17,5 +17,9 @@ export const Container = styled.div`
   margin: 0 auto;
   padding: 0px 50px 0px 50px;
 `
-
+export const MainContainer = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+`
 export default GlobalStyle;

@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import GlobalStyles from "./globalStyles"
+import GlobalStyles, { MainContainer } from "./globalStyles"
 
 // Import components
 import Navbar from "./components/Navbar/Navbar";
@@ -11,14 +11,16 @@ import SignInUser from "./components/SignUpForm/SignUpForm";
 
 function App() {
   return (
-    <Router>
-      <GlobalStyles />
-      <Navbar />
-      <Route path="/" exact component={Library} />
-      <Route path="/login" component={LogInUser} />
-      <Route path="/sign-up" component={SignInUser} />
-      <Footer />
-    </Router>
+    <MainContainer>
+      <Router>
+        <GlobalStyles />
+        <Navbar />
+        <Route path="/" exact component={Library} />
+        <Route path="/login" component={LogInUser} />
+        <Route path="/sign-up" component={SignInUser} />
+        <Footer />
+      </Router>
+    </MainContainer>
   );
 }
 
