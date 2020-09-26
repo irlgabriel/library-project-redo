@@ -1,6 +1,13 @@
 import React from "react";
 import firebase from "firebase";
-import { FormGroup, Form, FormHeader, FormLabel, FormInput, Button } from "../Form/Form.elements"
+import {
+  FormGroup,
+  Form,
+  FormHeader,
+  FormLabel,
+  FormInput,
+  Button,
+} from "../Form/Form.elements";
 
 export default function SignUpUser() {
   function submitHandler(e) {
@@ -21,29 +28,29 @@ export default function SignUpUser() {
   return (
     <Form onSubmit={submitHandler}>
       <FormHeader>Sign Up</FormHeader>
-        <FormGroup>
-          <FormLabel htmlFor="email">Email</FormLabel>
-          <FormInput
-            placeholder="Email"
-            required
-            minLength="6"
-            type="email"
-            name="email"
-          ></FormInput>
-        </FormGroup>
-        <FormGroup>
-          <FormLabel htmlFor="password">Password</FormLabel>
-          <FormInput
-            placeholder="********"
-            required
-            minLength="6"
-            type="password"
-            name="password"
-          ></FormInput>
-        </FormGroup>
-        <FormGroup>
-          <Button type="submit">Sign Up</Button>
-        </FormGroup>
+      <FormGroup>
+        <FormLabel htmlFor="email">Email</FormLabel>
+        <FormInput
+          placeholder="Email"
+          required
+          minLength="6"
+          type="email"
+          name="email"
+        ></FormInput>
+      </FormGroup>
+      <FormGroup>
+        <FormLabel htmlFor="password">Password</FormLabel>
+        <FormInput
+          placeholder="********"
+          required
+          minLength="6"
+          type="password"
+          name="password"
+        ></FormInput>
+      </FormGroup>
+      <FormGroup>
+        <Button type="submit">Sign Up</Button>
+      </FormGroup>
     </Form>
   );
 }

@@ -1,9 +1,11 @@
 import styled from "styled-components";
 
 export const Form = styled.form`
-  width: 600px;
+  display: flex;
+  flex-wrap: wrap;
   margin: auto;
   margin-top: 10px;
+  padding: 0 2rem;
   justify-content: space-between;
   @media screen and (max-width: 768px) {
     flex-direction: column;
@@ -40,3 +42,12 @@ export const Button = styled.button`
   &hover {
   }
 `;
+
+export const FormSelectGroup = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const FormSelect = styled.select``

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {FaTimes, FaBars} from "react-icons/fa"
+import { FaTimes, FaBars } from "react-icons/fa";
 import {
   Nav,
   NavLogo,
@@ -8,8 +8,8 @@ import {
   NavbarContainer,
   NavItem,
   NavLink,
-  MobileIcon
-} from "./Navbar.elements"
+  MobileIcon,
+} from "./Navbar.elements";
 
 export default function Navbar(props) {
   const [click, setClick] = useState(false);
@@ -19,12 +19,12 @@ export default function Navbar(props) {
   const closeMobileMenu = () => setClick(false);
 
   const showButon = () => {
-    if(window.innerWidth <= 960) {
+    if (window.innerWidth <= 960) {
       setButton(false);
     } else {
       setButton(true);
     }
-  }
+  };
 
   return (
     <>
@@ -38,15 +38,21 @@ export default function Navbar(props) {
           </MobileIcon>
           <NavMenu click={click}>
             <NavItem>
-              <NavLink onClick={closeMobileMenu} to="/">Library</NavLink>
+              <NavLink onClick={closeMobileMenu} to="/">
+                Library
+              </NavLink>
             </NavItem>
 
             <NavItem>
-              <NavLink onClick={closeMobileMenu} to="/sign-up">Sign Up</NavLink>
+              <NavLink onClick={closeMobileMenu} to="/sign-up">
+                Sign Up
+              </NavLink>
             </NavItem>
 
             <NavItem>
-              <NavLink onClick={closeMobileMenu} to="/login">Log In</NavLink>
+              <NavLink onClick={closeMobileMenu} to="/login">
+                Log In
+              </NavLink>
             </NavItem>
           </NavMenu>
         </NavbarContainer>

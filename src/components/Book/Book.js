@@ -6,11 +6,9 @@ import {
   BookAuthor,
   BookPages,
   DeleteButton,
-} from "./Book.elements"
-
+} from "./Book.elements";
 
 export default function Book(props) {
-
   return (
     <>
       <BookContainer>

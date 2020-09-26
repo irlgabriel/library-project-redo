@@ -1,6 +1,13 @@
 import React from "react";
 import firebase from "firebase";
-import { FormGroup, Form, FormHeader, FormLabel, FormInput, Button } from "../Form/Form.elements"
+import {
+  FormGroup,
+  Form,
+  FormHeader,
+  FormLabel,
+  FormInput,
+  Button,
+} from "../Form/Form.elements";
 
 export default function LogInUser() {
   function submitHandler(e) {

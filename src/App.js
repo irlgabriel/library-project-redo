@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import GlobalStyles, { MainContainer } from "./globalStyles"
+import GlobalStyles, { MainContainer } from "./globalStyles";
 
 // Import components
 import Navbar from "./components/Navbar/Navbar";

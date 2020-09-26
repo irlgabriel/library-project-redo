@@ -1,7 +1,7 @@
-import styled from "styled-components"
-import { Container } from "../../globalStyles"
-import { FaMagento } from 'react-icons/fa';
-import { Link }  from "react-router-dom"
+import styled from "styled-components";
+import { Container } from "../../globalStyles";
+import { FaMagento } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export const Nav = styled.nav`
   height: 80px;
@@ -12,17 +12,16 @@ export const Nav = styled.nav`
   position: sticky;
   top: 0;
   z-index: 999;
-`
+`;
 export const NavLogo = styled(Link)`
   display: flex;
   align-items: center;
   color: black;
-  
-`
+`;
 
 export const NavIcon = styled(FaMagento)`
   font-size: 2rem;
-`
+`;
 
 export const NavMenu = styled.ul`
   display: flex;
@@ -36,12 +35,12 @@ export const NavMenu = styled.ul`
     height: 90vh;
     position: absolute;
     top: 80px;
-    left: ${({ click }) => (click ? 0 : '-100%')};
+    left: ${({ click }) => (click ? 0 : "-100%")};
     opacity: 1;
     transition: all 0.5s ease;
     background: #101522;
   }
-`
+`;
 
 export const NavItem = styled.li`
   display: flex;
@@ -57,7 +56,7 @@ export const NavItem = styled.li`
       border: none;
     }
   }
-`
+`;
 
 export const NavbarContainer = styled(Container)`
   display: flex;
@@ -65,13 +64,13 @@ export const NavbarContainer = styled(Container)`
   height: 80px;
 
   ${Container}
-`
+`;
 
 export const NavLink = styled(Link)`
   text-decoration: none;
   font-size: 1.5rem;
-  color: ${({textLight}) => (textLight ? 'white' : 'black')};
-`
+  color: ${({ textLight }) => (textLight ? "white" : "black")};
+`;
 
 export const MobileIcon = styled.div`
   display: none;
@@ -84,4 +83,4 @@ export const MobileIcon = styled.div`
     font-size: 1.8rem;
     cursor: pointer;
   }
-`
+`;

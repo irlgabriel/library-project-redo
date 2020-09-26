@@ -1,5 +1,14 @@
 import React, { useState } from "react";
-import { FormGroup, Form, FormHeader, FormLabel, FormInput, Button } from "../Form/Form.elements"
+import {
+  FormGroup,
+  Form,
+  FormHeader,
+  FormLabel,
+  FormInput,
+  Button,
+  FormSelectGroup,
+  FormSelect
+} from "./BookForm.elements";
 
 export default function CreateBook(props) {
   const [title, setTitle] = useState("");
@@ -27,7 +36,6 @@ export default function CreateBook(props) {
       pages,
       status,
     };
-
   }
 
   return (
@@ -69,14 +77,13 @@ export default function CreateBook(props) {
           onChange={onChangePages}
         ></FormInput>
       </FormGroup>
-      <FormGroup>
+      <FormSelectGroup>
         <FormLabel htmlFor="status">Status</FormLabel>
-        <br />
-        <select name="status" defaultValue="unread">
+        <FormSelect name="status" defaultValue="unread">
           <option value="read">Read</option>
           <option value="unread">Unread</option>
-        </select>
-      </FormGroup>
+        </FormSelect>
+      </FormSelectGroup>
       <FormGroup>
         <Button type="submit">Add Book</Button>
       </FormGroup>
