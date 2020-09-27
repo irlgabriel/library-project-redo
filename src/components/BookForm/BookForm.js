@@ -40,6 +40,7 @@ export default function BookForm(props) {
       pages,
       status,
     };
+    console.log(book);
   }
 
   function toggleForm() {

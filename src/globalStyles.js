@@ -23,7 +23,7 @@ export const MainContainer = styled.div`
   flex-direction: column;
 `;
 
-export const Button = styled.div`
+export const Button = styled.button`
   user-select: none;
   padding: 0.375rem 0.75rem;
   border: none;
