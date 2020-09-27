@@ -3,9 +3,11 @@ import { Container } from "../../globalStyles";
 import { FaMagento } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
+
 export const Nav = styled.nav`
   height: 80px;
-  background: lightblue;
+  background: #101522;
+  color: white;
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
@@ -20,6 +22,7 @@ export const NavLogo = styled(Link)`
 `;
 
 export const NavIcon = styled(FaMagento)`
+  color: white;
   font-size: 2rem;
 `;
 
@@ -28,7 +31,6 @@ export const NavMenu = styled.ul`
   list-style: none;
   align-items: center;
   text-align: center;
-  color: ${({ bgLightMenu }) => (bgLightMenu ? "white" : "black")};
   @media screen and (max-width: 960px) {
     display: flex;
     flex-direction: column;
@@ -49,12 +51,16 @@ export const NavItem = styled.li`
   height: 80px;
   border-bottom: 2px solid transparent;
   padding: 0px 10px;
-
+  color: ${({ bgLightMenu }) => (bgLightMenu ? "white" : "black")};
   @media screen and (max-width: 960px) {
+    border-bottom: 1px solid white;
     width: 100%;
     justify-content: center;
     &:hover {
-      border: none;
+      color: lightcoral;
+    }
+    &:first-of-type {
+      border-top: 1px solid white;
     }
   }
 `;
@@ -70,7 +76,10 @@ export const NavbarContainer = styled(Container)`
 export const NavLink = styled(Link)`
   text-decoration: none;
   font-size: 1.5rem;
-  
+  color: white;
+  &:hover {
+    color: lightcoral;
+  }
 `;
 
 export const MobileIcon = styled.div`

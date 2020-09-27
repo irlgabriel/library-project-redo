@@ -11,6 +11,10 @@ import {
   MobileIcon,
 } from "./Navbar.elements";
 
+import {
+  navBarData
+} from "./NavbarData"
+
 export default function Navbar(props) {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);

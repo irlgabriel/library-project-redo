@@ -5,7 +5,8 @@ export const FooterContainer = styled.footer`
   flex-direction: column;
   margin-top: auto;
   text-align: center;
-  background-color: darkgrey;
+  background: #101522;
+  color: white;
   padding: 20px 0;
 `;
 
@@ -14,5 +15,5 @@ export const FooterHeader = styled.h3``;
 export const FooterLink = styled.a`
   text-align: center;
   text-decoration: none;
-  color: blue;
+  color: lightcoral;
 `;

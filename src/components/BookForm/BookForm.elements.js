@@ -1,12 +1,12 @@
 import styled from "styled-components";
+import { FaAngleDown } from "react-icons/fa"
 
 export const Form = styled.form`
-  display: flex;
+  display: ${({formToggled}) => (formToggled ? "flex" : "none")};
   flex-wrap: wrap;
   margin: auto;
   margin-top: 10px;
   padding: 0 2rem;
-  width: 800px;
   justify-content: space-between;
   @media screen and (max-width: 768px) {
     width: auto;
@@ -27,8 +27,8 @@ export const FormGroup = styled.div`
 export const FormHeader = styled.p`
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   text-transform: uppercase;
-  width: 100%;
   text-align: center;
+  display: inline-block;
 `;
 
 export const FormLabel = styled.label`
@@ -36,7 +36,23 @@ export const FormLabel = styled.label`
   margin-bottom: 5px;
 `;
 
-export const FormInput = styled.input``;
+export const FormInput = styled.input`
+  padding: .5rem 1rem;
+  border-radius: 5px;
+  box-shadow: none;
+  outline: none;
+  border: 2px solid lightgray;
+  box-sizing: border-box;
+  &:focus {
+    border: 2px solid lightgray;
+  }
+  &:focus:invalid {
+    border: 2px solid rgba(219, 22, 22, 0.4);
+  }
+  &:focus:valid {
+    border: 2px solid rgba(50, 168, 82, 0.4);
+  }
+`;
 
 export const Button = styled.button`
   padding: 0.375rem 0.75rem;
@@ -55,3 +71,26 @@ export const FormSelectGroup = styled.div`
 `;
 
 export const FormSelect = styled.select``
+
+export const FormToggler = styled.div`
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(50, 168, 82, 0.4);
+  padding: .375rem .75rem;
+  border-radius: 5px;
+  user-select: none;
+  text-align: center;
+  margin: auto;
+  min-width: 150px;
+  max-width: 200px;
+`
+
+export const FlexBreak = styled.div`
+  flex-basis: 100%;
+`
+
+export const ToggleIcon = styled(FaAngleDown)`
+  font-size: 20px;
+`

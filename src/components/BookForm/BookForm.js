@@ -7,10 +7,14 @@ import {
   FormInput,
   Button,
   FormSelectGroup,
-  FormSelect
+  FormSelect,
+  FormToggler,
+  ToggleIcon,
+  FlexBreak
 } from "./BookForm.elements";
 
-export default function CreateBook(props) {
+export default function BookForm(props) {
+  const [formToggled, setToggle] = useState(false);
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [pages, setPages] = useState(0);
@@ -38,9 +42,17 @@ export default function CreateBook(props) {
     };
   }
 
+  function toggleForm() {
+    setToggle(!formToggled);
+  }
+
   return (
-    <Form onSubmit={onSubmit}>
-      <FormHeader>Add a new Book</FormHeader>
+  <>
+    <FormToggler onClick={toggleForm}>
+      <FormHeader>Add a new Book&nbsp;</FormHeader>
+      <ToggleIcon />
+    </FormToggler>
+    <Form formToggled={formToggled} onSubmit={onSubmit}>
       <FormGroup>
         <FormLabel htmlFor="title">Book Title</FormLabel>
         <FormInput
@@ -88,5 +100,6 @@ export default function CreateBook(props) {
         <Button type="submit">Add Book</Button>
       </FormGroup>
     </Form>
+  </>
   );
 }
