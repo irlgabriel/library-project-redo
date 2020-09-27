@@ -13,25 +13,37 @@ import { Logout } from "./components";
 import { Profile } from "./components"
 
 function App() {
-  const [user, setUser] = useState(false);
+  const [user, setUser] = useState(undefined);
+  const [books, setBooks] = useState([]);
+
   firebase.auth().onAuthStateChanged((currentUser) => {
+    console.log("authStateRun", currentUser.uid)
     if(currentUser) {
       setUser(currentUser)
-    } else {
-      setUser(undefined);
     }
   });
+
+  if(books.length == 0) {
+  firebase.firestore().collection(`Books${user ? user.uid : ""}`).get()
+    .then(snap => {
+      setBooks(snap.docs.map(obj => obj.data()));
+      console.log(books)
+    })
+  }
+  
+
+
   return (
     <Router>
       <MainContainer>
-          <GlobalStyles />
-          <Navbar user={user} />
-          <Route path="/" exact render={() => (<Library user={user}/>)}/>
-          <Route path="/login" component={LoginForm} />
-          <Route path="/sign-up" component={SignUpForm} />
-          <Route path="/logout" component={Logout} />
-          <Route path="/profile" render={() => (<Profile user={user}/>)}/>
-          <Footer />
+        <GlobalStyles />
+        <Navbar user={user} />
+        <Route path="/" exact render={() => (<Library books={books}/>)}/>
+        <Route path="/login" component={LoginForm} />
+        <Route path="/sign-up" component={SignUpForm} />
+        <Route path="/logout" component={Logout} />
+        <Route path="/profile" render={() => (<Profile user={user}/>)}/>
+        <Footer />
       </MainContainer>
     </Router>
   );

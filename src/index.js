@@ -18,4 +18,3 @@ firebase.initializeApp(firebaseConfig);
 
 ReactDOM.render(<App />, document.querySelector("#root"));
 
-/* Styling main container */
