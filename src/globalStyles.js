@@ -22,4 +22,19 @@ export const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
+export const Button = styled.div`
+  padding: .375rem .75rem;
+  border: none;
+  border-radius: 5px;
+  background: #101522;
+  color: white;
+  border: 1px solid white;
+  transition: all 0.5s ease;
+  &:hover {
+    background: white;
+    color: #101522;
+    border: 1px solid #101522;
+  }
+`
 export default GlobalStyle;

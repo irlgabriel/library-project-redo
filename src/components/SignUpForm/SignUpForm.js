@@ -6,8 +6,8 @@ import {
   FormHeader,
   FormLabel,
   FormInput,
-  Button,
 } from "../Form/Form.elements";
+import { Button } from "../../globalStyles"
 
 export default function SignUpUser() {
   function submitHandler(e) {

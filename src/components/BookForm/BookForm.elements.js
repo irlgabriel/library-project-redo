@@ -21,6 +21,8 @@ export const FormGroup = styled.div`
 
   &:last-of-type {
     width: 100%;
+    flex-direction: row;
+    justify-content: center;
   }
 `;
 
@@ -56,7 +58,7 @@ export const FormInput = styled.input`
 
 export const Button = styled.button`
   padding: 0.375rem 0.75rem;
-  width: 25%;
+  width: 200px;
   margin: auto;
 
   &hover {

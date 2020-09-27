@@ -16,7 +16,8 @@ export const FormGroup = styled.div`
   margin: 10px 0;
 
   &:last-of-type {
-    width: 100%;
+    flex-direction: row;
+    justify-content: center;
   }
 `;
 
@@ -30,13 +31,24 @@ export const FormLabel = styled.label`
   margin-bottom: 5px;
 `;
 
-export const FormInput = styled.input``;
-
+export const FormInput = styled.input`
+  padding: .5rem 1rem;
+  border-radius: 5px;
+  box-shadow: none;
+  outline: none;
+  border: 2px solid lightgray;
+  box-sizing: border-box;
+  &:focus {
+    border: 2px solid lightgray;
+  }
+  &:focus:invalid {
+    border: 3px solid rgba(219, 22, 22, 0.4);
+  }
+  &:focus:valid {
+    border: 3px solid rgba(50, 168, 82, 0.4);
+  }
+`;
 export const Button = styled.button`
   padding: 0.175rem 0.5rem;
-  width: 25%;
   margin: auto;
-
-  &hover {
-  }
 `;

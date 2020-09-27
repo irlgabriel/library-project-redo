@@ -5,13 +5,13 @@ import {
   FormHeader,
   FormLabel,
   FormInput,
-  Button,
   FormSelectGroup,
   FormSelect,
   FormToggler,
   ToggleIcon,
   FlexBreak
 } from "./BookForm.elements";
+import { Button } from "../../globalStyles"
 
 export default function BookForm(props) {
   const [formToggled, setToggle] = useState(false);
