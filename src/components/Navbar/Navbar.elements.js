@@ -3,7 +3,6 @@ import { Container } from "../../globalStyles";
 import { FaMagento } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-
 export const Nav = styled.nav`
   height: 80px;
   background: #101522;

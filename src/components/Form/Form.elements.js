@@ -32,7 +32,7 @@ export const FormLabel = styled.label`
 `;
 
 export const FormInput = styled.input`
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 5px;
   box-shadow: none;
   outline: none;

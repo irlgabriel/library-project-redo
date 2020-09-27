@@ -7,12 +7,12 @@ import {
   FormLabel,
   FormInput,
 } from "../Form/Form.elements";
-import { Button } from "../../globalStyles"
+import { Button } from "../../globalStyles";
 
 export default function LogInUser() {
   function submitHandler(e) {
     e.preventDefault();
-
+    console.log(e);
     const email = e.target.email.value;
     const password = e.target.password.value;
 
@@ -26,7 +26,7 @@ export default function LogInUser() {
   }
 
   return (
-    <Form>
+    <Form onSubmit={submitHandler}>
       <FormHeader>Log in</FormHeader>
       <FormGroup>
         <FormLabel htmlFor="email">Email</FormLabel>
@@ -49,7 +49,7 @@ export default function LogInUser() {
         ></FormInput>
       </FormGroup>
       <FormGroup>
-        <Button>Login</Button>
+        <Button type="submit">Login</Button>
       </FormGroup>
     </Form>
   );

@@ -11,11 +11,7 @@ import {
   MobileIcon,
 } from "./Navbar.elements";
 
-import {
-  navBarData
-} from "./NavbarData"
-
-export default function Navbar(props) {
+export default function Navbar({ user }) {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
@@ -46,18 +42,36 @@ export default function Navbar(props) {
                 Library
               </NavLink>
             </NavItem>
-
-            <NavItem>
-              <NavLink onClick={closeMobileMenu} to="/sign-up">
-                Sign Up
-              </NavLink>
-            </NavItem>
-
-            <NavItem>
-              <NavLink onClick={closeMobileMenu} to="/login">
-                Log In
-              </NavLink>
-            </NavItem>
+            {user ? (
+              <NavItem>
+                <NavLink onClick={closeMobileMenu} to="/logout">
+                  Logout
+                </NavLink>
+              </NavItem>
+            ) : (
+              ""
+            )}
+            
+            {!user ? (
+              <NavItem>
+                <NavLink onClick={closeMobileMenu} to="/login">
+                  Log In
+                </NavLink>
+              </NavItem>
+            ) : (
+              ""
+            )}
+            
+            {!user ? (
+              <NavItem>
+                <NavLink onClick={closeMobileMenu} to="/sign-up">
+                  Sign Up
+                </NavLink>
+              </NavItem>
+            ) : (
+              ""
+            )}
+            
           </NavMenu>
         </NavbarContainer>
       </Nav>

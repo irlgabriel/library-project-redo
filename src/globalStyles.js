@@ -24,7 +24,8 @@ export const MainContainer = styled.div`
 `;
 
 export const Button = styled.div`
-  padding: .375rem .75rem;
+  user-select: none;
+  padding: 0.375rem 0.75rem;
   border: none;
   border-radius: 5px;
   background: #101522;
@@ -36,5 +37,6 @@ export const Button = styled.div`
     color: #101522;
     border: 1px solid #101522;
   }
-`
+  
+`;
 export default GlobalStyle;
