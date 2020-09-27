@@ -8,13 +8,16 @@ import {
   DeleteButton,
 } from "./Book.elements";
 
-export default function Book(props) {
+export default function Book({book, books, setBooks}) {
+  function toggleStatus() {
+
+  }
   return (
     <>
-      <BookContainer>
-        <BookTitle></BookTitle>
-        <BookAuthor></BookAuthor>
-        <BookPages></BookPages>
+      <BookContainer onClick={toggleStatus}>
+        <BookTitle>{book.title}</BookTitle>
+        <BookAuthor>{book.author}</BookAuthor>
+        <BookPages>{book.pages}</BookPages>
         <DeleteButton></DeleteButton>
       </BookContainer>
     </>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import firebase from "firebase"
 import {
   FormGroup,
   Form,
@@ -13,12 +14,13 @@ import {
 } from "./BookForm.elements";
 import { Button } from "../../globalStyles";
 
-export default function BookForm(props) {
+
+export default function BookForm({user}) {
   const [formToggled, setToggle] = useState(false);
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [pages, setPages] = useState(0);
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState("unread");
   function onChangeTitle(e) {
     setTitle(e.target.value);
   }
@@ -40,7 +42,11 @@ export default function BookForm(props) {
       pages,
       status,
     };
-    console.log(book);
+    firebase.firestore().collection(`Books${user ? user.uid : ""}`).add(book)
+    .then(() => {
+      window.location = "/";
+    })
+    .catch(err => console.log(err.message))
   }
 
   function toggleForm() {
@@ -92,7 +98,7 @@ export default function BookForm(props) {
         </FormGroup>
         <FormSelectGroup>
           <FormLabel htmlFor="status">Status</FormLabel>
-          <FormSelect name="status" defaultValue="unread">
+          <FormSelect onChange={onChangeStatus} name="status" defaultValue="unread">
             <option value="read">Read</option>
             <option value="unread">Unread</option>
           </FormSelect>

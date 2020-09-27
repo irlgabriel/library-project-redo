@@ -6,7 +6,7 @@ export default function Logout() {
     firebase.auth().signOut()
     .then(() => {
       console.log("User successfully Signed out")
-      window.location("/");
+      window.location = "/";
     })
     
     .catch(err => console.log(err.message))

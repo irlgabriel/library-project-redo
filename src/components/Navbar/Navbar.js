@@ -38,19 +38,30 @@ export default function Navbar({ user }) {
           </MobileIcon>
           <NavMenu bgLightMenu click={click}>
             <NavItem>
-              <NavLink onClick={closeMobileMenu} to="/">
+              <NavLink user={user} onClick={closeMobileMenu} to="/">
                 Library
               </NavLink>
             </NavItem>
+            {user ? (
+              <NavItem>
+              <NavLink onClick={closeMobileMenu} to="/profile">
+                Profile
+              </NavLink>
+            </NavItem>
+            ) : (
+              ""
+            )}
             {user ? (
               <NavItem>
                 <NavLink onClick={closeMobileMenu} to="/logout">
                   Logout
                 </NavLink>
               </NavItem>
+
             ) : (
               ""
             )}
+            
             
             {!user ? (
               <NavItem>

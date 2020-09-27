@@ -20,6 +20,7 @@ export default function SignUpUser() {
       .createUserWithEmailAndPassword(email, password)
       .then((user) => {
         console.log(user);
+        window.location = "/";
       })
       .catch((err) => {
         console.log(err.message);
