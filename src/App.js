@@ -17,7 +17,6 @@ function App() {
   const [books, setBooks] = useState([]);
 
   firebase.auth().onAuthStateChanged((currentUser) => {
-    console.log("authStateRun", currentUser.uid)
     if(currentUser) {
       setUser(currentUser)
     }
@@ -27,18 +26,15 @@ function App() {
   firebase.firestore().collection(`Books${user ? user.uid : ""}`).get()
     .then(snap => {
       setBooks(snap.docs.map(obj => obj.data()));
-      console.log(books)
     })
   }
   
-
-
   return (
     <Router>
       <MainContainer>
         <GlobalStyles />
         <Navbar user={user} />
-        <Route path="/" exact render={() => (<Library books={books}/>)}/>
+        <Route path="/" exact render={() => (<Library user={user} setBooks={setBooks} books={books}/>)}/>
         <Route path="/login" component={LoginForm} />
         <Route path="/sign-up" component={SignUpForm} />
         <Route path="/logout" component={Logout} />
