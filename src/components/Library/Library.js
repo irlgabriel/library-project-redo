@@ -23,9 +23,9 @@ export default function Library({user}) {
   return (
     <Container>
       <BookForm user={user}/>
-      <LibraryHeader>Library</LibraryHeader>
+      <LibraryHeader>{`Library(${books.length})`}</LibraryHeader>
       <BooksContainer>
-        {books.map(el => <Book book={el} setBooks={setBooks} books={books}/>)}
+      {books.map(el => <Book book={el} setBooks={setBooks} books={books}/>)}
       </BooksContainer>
     </Container>
   );

@@ -62,7 +62,7 @@ export const Button = styled.button`
   width: 200px;
   margin: auto;
 
-  &hover {
+  &:hover {
   }
 `;
 

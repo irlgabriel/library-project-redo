@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import GlobalStyles, { MainContainer } from "./globalStyles";
 import firebase from "firebase";
 
@@ -14,20 +14,26 @@ import { Profile } from "./components"
 
 function App() {
   const [user, setUser] = useState(false);
-  firebase.auth().onAuthStateChanged((user) => setUser(user));
+  firebase.auth().onAuthStateChanged((currentUser) => {
+    if(currentUser) {
+      setUser(currentUser)
+    } else {
+      setUser(undefined);
+    }
+  });
   return (
-    <MainContainer>
-      <Router>
-        <GlobalStyles />
-        <Navbar user={user} />
-        <Route path="/" exact render={(props) => (<Library user={user}/>)}/>
-        <Route path="/login" component={LoginForm} />
-        <Route path="/sign-up" component={SignUpForm} />
-        <Route path="/logout" component={Logout} />
-        <Route path="/profile" render={(props) => (<Profile user={user}/>)}/>
-        <Footer />
-      </Router>
-    </MainContainer>
+    <Router>
+      <MainContainer>
+          <GlobalStyles />
+          <Navbar user={user} />
+          <Route path="/" exact render={() => (<Library user={user}/>)}/>
+          <Route path="/login" component={LoginForm} />
+          <Route path="/sign-up" component={SignUpForm} />
+          <Route path="/logout" component={Logout} />
+          <Route path="/profile" render={() => (<Profile user={user}/>)}/>
+          <Footer />
+      </MainContainer>
+    </Router>
   );
 }
 

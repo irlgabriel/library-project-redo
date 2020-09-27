@@ -7,7 +7,6 @@ export default function Profile({user}) {
     <>
       <ProfileInfo>
         <UserEmail>
-          {user.uid}
           {user.email}
         </UserEmail>
       </ProfileInfo>

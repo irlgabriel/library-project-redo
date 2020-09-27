@@ -12,7 +12,6 @@ import { Button } from "../../globalStyles";
 export default function LogInUser() {
   function submitHandler(e) {
     e.preventDefault();
-    console.log(e);
     const email = e.target.email.value;
     const password = e.target.password.value;
 
