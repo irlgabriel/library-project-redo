@@ -10,35 +10,56 @@ import {
 import { Button } from "../../globalStyles";
 
 export default function SignUpUser() {
+  const auth = firebase.auth();
+  
   function submitHandler(e) {
     e.preventDefault();
-    const auth = firebase.auth();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    const passwordConfirmation = e.target.password_confirmation.value;
 
-    auth
+    if(e.target.checkValidity()) {
+      auth
       .createUserWithEmailAndPassword(email, password)
       .then((user) => {
         console.log(user);
         window.location = "/";
       })
       .catch((err) => {
-        console.log(err.message);
+        
       });
+    } else {
+      e.target.reportValidity();
+    }
   }
 
-function validatePasswords(e) {
-  const form = e.target.parentElement.parentElement
-  const password = form.password.value
-  const confirmation = form.password_confirmation.value
-  const submit = form.querySelector("button");
-  if(password !== confirmation) {
-    submit.disabled = true;
-  } else {
-    submit.disabled = false;
+  function validatePasswords(e) {
+    const form = e.target.parentElement.parentElement
+    const password = form.password
+    const confirmation = form.password_confirmation
+    const submit = form.querySelector("button");
+    if(password.value !== confirmation.value) {
+      password.setCustomValidity("Passwords do not match!")
+      confirmation.setCustomValidity("Passwords do not match!")
+    } else {
+      password.setCustomValidity("");
+      confirmation.setCustomValidity("");
+    }
   }
-}
+
+  function validateEmail(e) {
+    const email = e.target;
+
+    auth.fetchSignInMethodsForEmail(email.value)
+    .then(res => {
+      if(res.length === 0) {
+        email.setCustomValidity("");
+      } else {
+        email.setCustomValidity("Email Already in Use!")
+      }
+      email.reportValidity()
+    })
+  }
+
 
   return (
     <Form onSubmit={submitHandler}>
@@ -46,6 +67,7 @@ function validatePasswords(e) {
       <FormGroup>
         <FormLabel htmlFor="email">Email</FormLabel>
         <FormInput
+          onChange={validateEmail}
           placeholder="Email"
           required
           minLength="6"
