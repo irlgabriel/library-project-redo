@@ -16,6 +16,16 @@ export const BookContainer = styled.div`
   &:hover {
     background: ${({ bookStatus }) => (bookStatus ? "lightcoral" : "lightblue")};
   }
+
+  @media screen and (max-width: 768px) {
+    width: 350px;
+    height: 450px;
+  }
+
+  @media screen and (max-width: 980px) {
+    width: 300px;
+    height: 400px;
+  }
 `;
 
 export const BookTitle = styled.p`
@@ -38,7 +48,7 @@ export const BookPages = styled.p`
 export const DeleteButton = styled(FaTrash)`
   transform: rotate(0deg);
   transition: all 0.5s ease-in-out;
-  font-size: 2.5rem;
+  font-size: 2rem;
   &:hover {
     transform: rotate(45deg);
     color: red;

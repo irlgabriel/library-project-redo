@@ -8,9 +8,11 @@ export const Form = styled.form`
   margin-top: 10px;
   width: 700px;
   justify-content: space-between;
+
   @media screen and (max-width: 768px) {
     width: auto;
     flex-direction: column;
+    padding: 0px 50px;
   }
 `;
 
@@ -88,6 +90,7 @@ export const FormToggler = styled.div`
   margin: auto;
   min-width: 150px;
   max-width: 200px;
+  margin-top: 10px;
 `;
 
 export const FlexBreak = styled.div`

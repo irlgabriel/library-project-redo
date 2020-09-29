@@ -42,7 +42,9 @@ export default function BookForm({user}) {
       status,
     };
     firebase.firestore().collection(`Books${user ? user.uid : ""}`).add(book)
-    .then(() => {
+    .then((book) => {
+      const bookId = book.id;
+      book.update({id:bookId})
       window.location = "/";
     })
     .catch(err => console.log(err.message))
