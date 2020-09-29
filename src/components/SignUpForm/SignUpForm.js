@@ -15,6 +15,7 @@ export default function SignUpUser() {
     const auth = firebase.auth();
     const email = e.target.email.value;
     const password = e.target.password.value;
+    const passwordConfirmation = e.target.password_confirmation.value;
 
     auth
       .createUserWithEmailAndPassword(email, password)
@@ -26,6 +27,19 @@ export default function SignUpUser() {
         console.log(err.message);
       });
   }
+
+function validatePasswords(e) {
+  const form = e.target.parentElement.parentElement
+  const password = form.password.value
+  const confirmation = form.password_confirmation.value
+  const submit = form.querySelector("button");
+  if(password !== confirmation) {
+    submit.disabled = true;
+  } else {
+    submit.disabled = false;
+  }
+}
+
   return (
     <Form onSubmit={submitHandler}>
       <FormHeader>Sign Up</FormHeader>
@@ -42,11 +56,23 @@ export default function SignUpUser() {
       <FormGroup>
         <FormLabel htmlFor="password">Password</FormLabel>
         <FormInput
+          onChange={validatePasswords} 
           placeholder="********"
           required
           minLength="6"
           type="password"
           name="password"
+        ></FormInput>
+      </FormGroup>
+      <FormGroup>
+       <FormLabel htmlFor="password_confirmation">Password Confirmation</FormLabel>
+        <FormInput
+          onChange={validatePasswords} 
+          placeholder="********"
+          required
+          minLength="6"
+          type="password"
+          name="password_confirmation"
         ></FormInput>
       </FormGroup>
       <FormGroup>

@@ -25,7 +25,7 @@ export const MainContainer = styled.div`
 
 export const Button = styled.button`
   user-select: none;
-  padding: 0.375rem 0.75rem;
+  padding: 0.675rem 1.35rem;
   border: none;
   border-radius: 5px;
   background: #101522;
@@ -37,6 +37,13 @@ export const Button = styled.button`
     color: #101522;
     border: 1px solid #101522;
   }
-  
+  &:hover:disabled {
+    background: #101522;
+    color: white;
+    border: 1px solid white;
+  }
+  &:disabled {
+    opacity: 0.4;
+  }
 `;
 export default GlobalStyle;
