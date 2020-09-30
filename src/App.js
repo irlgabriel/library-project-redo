@@ -22,7 +22,7 @@ function App() {
     }
   });
 
-  if(books.length == 0) {
+  if(books.length === 0) {
   firebase.firestore().collection(`Books${user ? user.uid : ""}`).get()
     .then(snap => {
       setBooks(snap.docs.map(obj => obj.data()));
