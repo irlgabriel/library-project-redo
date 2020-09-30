@@ -11,7 +11,7 @@ export default function Book({book, books, setBooks}) {
   function toggleStatus() {
 
   }
-
+  console.log(books)
   function deleteHandler() {
     if(window.confirm("Are you sure you want to delete this book? This action cannot be undone.")) {
 
@@ -23,7 +23,7 @@ export default function Book({book, books, setBooks}) {
   return (
     <>
       <BookContainer
-        data={book.id}
+        data-id={book.id}
         onClick={toggleStatus}>
         <BookTitle>{book.title}</BookTitle>
         <BookAuthor>

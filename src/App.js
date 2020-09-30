@@ -9,7 +9,7 @@ import { Library } from "./components";
 import { LoginForm } from "./components";
 import { Footer } from "./components";
 import { SignUpForm } from "./components";
-import { Logout } from "./components";
+import { Logout } from "./components"
 import { Profile } from "./components"
 
 function App() {
