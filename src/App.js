@@ -49,7 +49,7 @@ function App() {
         <Route path="/login" component={LoginForm} />
         <Route path="/sign-up" component={SignUpForm} />
         <Route path="/logout" component={Logout} />
-        <Route path="/profile" render={() => (<Profile user={user}/>)}/>
+        <Route path="/profile" render={() => (<Profile books={books} user={user}/>)}/>
         <Footer />
       </MainContainer>
     </Router>
