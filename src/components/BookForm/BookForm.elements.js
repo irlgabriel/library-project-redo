@@ -7,7 +7,7 @@ export const Form = styled.form`
   margin: auto;
   margin-top: 10px;
   width: 700px;
-  justify-content: space-between;
+  justify-content: center;
 
   @media screen and (max-width: 768px) {
     width: auto;
@@ -19,7 +19,7 @@ export const Form = styled.form`
 export const FormGroup = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 10px 0;
+  margin: 10px;
 
   &:last-of-type {
     width: 100%;
@@ -103,3 +103,4 @@ export const ToggleIcon = styled(FaAngleDown)`
   transform: ${({ formToggled }) =>
     !formToggled ? "rotate(0deg)" : "rotate(180deg)"};
 `;
+

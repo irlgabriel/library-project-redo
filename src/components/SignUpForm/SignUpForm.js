@@ -7,7 +7,7 @@ import {
   FormLabel,
   FormInput,
 } from "../Form/Form.elements";
-import { Button } from "../../globalStyles";
+import { Button, Container } from "../../globalStyles";
 
 export default function SignUpUser() {
   const auth = firebase.auth();
@@ -61,44 +61,46 @@ export default function SignUpUser() {
 
 
   return (
-    <Form onSubmit={submitHandler}>
-      <FormHeader>Sign Up</FormHeader>
-      <FormGroup>
-        <FormLabel htmlFor="email">Email</FormLabel>
-        <FormInput
-          onChange={validateEmail}
-          placeholder="Email"
-          required
-          minLength="6"
-          type="email"
-          name="email"
-        ></FormInput>
-      </FormGroup>
-      <FormGroup>
-        <FormLabel htmlFor="password">Password</FormLabel>
-        <FormInput
-          onChange={validatePasswords} 
-          placeholder="********"
-          required
-          minLength="6"
-          type="password"
-          name="password"
-        ></FormInput>
-      </FormGroup>
-      <FormGroup>
-       <FormLabel htmlFor="password_confirmation">Password Confirmation</FormLabel>
-        <FormInput
-          onChange={validatePasswords} 
-          placeholder="********"
-          required
-          minLength="6"
-          type="password"
-          name="password_confirmation"
-        ></FormInput>
-      </FormGroup>
-      <FormGroup>
-        <Button type="submit">Sign Up</Button>
-      </FormGroup>
-    </Form>
+    <Container>
+      <Form onSubmit={submitHandler}>
+        <FormHeader>Sign Up</FormHeader>
+        <FormGroup>
+          <FormLabel htmlFor="email">Email</FormLabel>
+          <FormInput
+            onChange={validateEmail}
+            placeholder="Email"
+            required
+            minLength="6"
+            type="email"
+            name="email"
+          ></FormInput>
+        </FormGroup>
+        <FormGroup>
+          <FormLabel htmlFor="password">Password</FormLabel>
+          <FormInput
+            onChange={validatePasswords} 
+            placeholder="********"
+            required
+            minLength="6"
+            type="password"
+            name="password"
+          ></FormInput>
+        </FormGroup>
+        <FormGroup>
+        <FormLabel htmlFor="password_confirmation">Password Confirmation</FormLabel>
+          <FormInput
+            onChange={validatePasswords} 
+            placeholder="********"
+            required
+            minLength="6"
+            type="password"
+            name="password_confirmation"
+          ></FormInput>
+        </FormGroup>
+        <FormGroup>
+          <Button type="submit">Sign Up</Button>
+        </FormGroup>
+      </Form>
+    </Container>     
   );
 }

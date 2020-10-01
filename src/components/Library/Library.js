@@ -2,18 +2,31 @@ import React from "react";
 import { BookForm } from "../../components";
 import { Book } from "../../components"
 import { Container } from "../../globalStyles";
-import { LibraryHeader, BooksContainer } from "./Library.elements";
+import { LibraryHeader, Header, BooksContainer, NoLogin, UserLink } from "./Library.elements";
 
 
 export default function Library({user, books, setBooks}) {
 
   return (
-    <Container>
-      <BookForm user={user}/>
-      <LibraryHeader>{`Library(${books.length})`}</LibraryHeader>
-      <BooksContainer>
-      {books.map(el => <Book user={user} key={el.id} book={el} setBooks={setBooks} books={books}/>)}
-      </BooksContainer>
-    </Container>
+    <>
+    { user 
+    ?
+      <Container>
+        <BookForm user={user}/>
+        <LibraryHeader>{`Library(${books.length})`}</LibraryHeader>
+        <BooksContainer>
+        {books.map(el => <Book user={user} key={el.id} book={el} setBooks={setBooks} books={books}/>)}
+        </BooksContainer>
+      </Container>
+    : 
+      <Container>
+        <NoLogin>
+          <Header>You need to be logged in to see your books Library!</Header>
+          <UserLink to="/sign-up">Sign Up</UserLink>
+          <UserLink to="/login">Login</UserLink>
+        </NoLogin>
+      </Container>
+    }
+    </>
   );
 }
