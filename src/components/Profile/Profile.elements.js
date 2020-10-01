@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const ProfileInfo = styled.div`
-  min-width: 50%;
+  min-width: 400px;
   margin: 20px auto;
   padding: 10px;
   border-radius: 10px;
@@ -14,7 +14,6 @@ export const UserEmail = styled.p`
 `
 
 export const BookDetails = styled.div`
-
 `
 export const ReadBook = styled.p`
   user-select: none;
