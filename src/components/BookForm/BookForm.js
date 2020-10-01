@@ -45,7 +45,6 @@ export default function BookForm({user}) {
     .then((book) => {
       const bookId = book.id;
       book.update({id:bookId})
-      window.location = "/";
     })
     .catch(err => console.log(err.message))
   }

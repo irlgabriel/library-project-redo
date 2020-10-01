@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Form = styled.form`
-  width: 600px;
+  max-width: 600px;
   margin: auto;
   margin-top: 10px;
   justify-content: space-between;

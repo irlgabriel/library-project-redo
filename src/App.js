@@ -46,7 +46,7 @@ function App() {
         <GlobalStyles />
         <Navbar user={user} />
         <Route path="/" exact render={() => (<Library user={user} setBooks={setBooks} books={books}/>)}/>
-        <Route path="/login" component={LoginForm} />
+        <Route path="/login" render={() => (<LoginForm />) }/>
         <Route path="/sign-up" component={SignUpForm} />
         <Route path="/logout" component={Logout} />
         <Route path="/profile" render={() => (<Profile books={books} user={user}/>)}/>

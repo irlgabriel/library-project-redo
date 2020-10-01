@@ -7,16 +7,28 @@ import {
   FormLabel,
   FormInput,
 } from "../Form/Form.elements";
-import { Button } from "../../globalStyles";
+import { Button, Container } from "../../globalStyles";
 
-export default function LogInUser() {
+export default function LogInUser({googleLogin}) {
+  const auth = firebase.auth()
+
+  function googleLogin() {
+    let provider = new firebase.auth.GoogleAuthProvider();
+    auth
+      .signInWithPopup(provider)
+      .then((user) => {
+        window.location = "/profile";
+      })
+      .catch(err => console.log(err.message))
+
+  }
+
   function submitHandler(e) {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    firebase
-      .auth()
+    auth
       .signInWithEmailAndPassword(email, password)
       .then(() => {
         window.location = "/";
@@ -25,31 +37,36 @@ export default function LogInUser() {
   }
 
   return (
-    <Form onSubmit={submitHandler}>
-      <FormHeader>Log in</FormHeader>
+    <Container>
+      <Form onSubmit={submitHandler}>
+        <FormHeader>Log in</FormHeader>
+        <FormGroup>
+          <FormLabel htmlFor="email">Email</FormLabel>
+          <FormInput
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
+            minLength="6"
+          ></FormInput>
+        </FormGroup>
+        <FormGroup>
+          <FormLabel htmlFor="password">Password</FormLabel>
+          <FormInput
+            type="password"
+            name="password"
+            placeholder="********"
+            required
+            minLength="6"
+          ></FormInput>
+        </FormGroup>
+        <FormGroup>
+          <Button type="submit">Login</Button>
+        </FormGroup>
+      </Form>
       <FormGroup>
-        <FormLabel htmlFor="email">Email</FormLabel>
-        <FormInput
-          type="email"
-          name="email"
-          placeholder="Email"
-          required
-          minLength="6"
-        ></FormInput>
+        <Button onClick={googleLogin}>Login with Google</Button>
       </FormGroup>
-      <FormGroup>
-        <FormLabel htmlFor="password">Password</FormLabel>
-        <FormInput
-          type="password"
-          name="password"
-          placeholder="********"
-          required
-          minLength="6"
-        ></FormInput>
-      </FormGroup>
-      <FormGroup>
-        <Button type="submit">Login</Button>
-      </FormGroup>
-    </Form>
+    </Container>
   );
 }

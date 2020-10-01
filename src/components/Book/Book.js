@@ -28,6 +28,7 @@ export default function Book({ book, books, setBooks}) {
   return (
     <>
       <BookContainer
+        bookStatus={book.status}
         data-id={book.id}
         onClick={toggleStatus}>
         <BookTitle>{book.title}</BookTitle>

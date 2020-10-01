@@ -6,7 +6,7 @@ export const BookContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   padding: 10px;
-  opacity: ${({ bookStatus }) => (bookStatus ? "0.4" : "1")};
+  opacity: ${({ bookStatus }) => (bookStatus === "read" ? "0.4" : "1")};
   background: ${({ bookStatus }) => (!bookStatus ? "lightcoral" : "lightblue")};
   border-radius: 5px;
   height: 350px;
