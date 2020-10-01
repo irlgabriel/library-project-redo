@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import firebase from "firebase"
+import firebase from "firebase";
 import {
   FormGroup,
   Form,
@@ -13,8 +13,7 @@ import {
 } from "./BookForm.elements";
 import { Button } from "../../globalStyles";
 
-
-export default function BookForm({user}) {
+export default function BookForm({ user }) {
   const [formToggled, setToggle] = useState(false);
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
@@ -41,12 +40,19 @@ export default function BookForm({user}) {
       pages,
       status,
     };
-    firebase.firestore().collection(`Books${user ? user.uid : ""}`).add(book)
-    .then((book) => {
-      const bookId = book.id;
-      book.update({id:bookId})
-    })
-    .catch(err => console.log(err.message))
+    firebase
+      .firestore()
+      .collection(`Books${user ? user.uid : ""}`)
+      .add(book)
+      .then((book) => {
+        const bookId = book.id;
+        book.update({ id: bookId });
+        setTitle("")
+        setAuthor("")
+        setStatus("unread")
+        setPages(0)
+      })
+      .catch((err) => console.log(err.message));
   }
 
   function toggleForm() {
@@ -63,6 +69,7 @@ export default function BookForm({user}) {
         <FormGroup>
           <FormLabel htmlFor="title">Book Title</FormLabel>
           <FormInput
+            value={title}
             minLength="5"
             maxLength="50"
             type="text"
@@ -75,6 +82,7 @@ export default function BookForm({user}) {
         <FormGroup>
           <FormLabel htmlFor="author">Book Author</FormLabel>
           <FormInput
+            value={author}
             minLength="5"
             maxLength="30"
             type="text"
@@ -87,6 +95,7 @@ export default function BookForm({user}) {
         <FormGroup>
           <FormLabel htmlFor="pages">Pages</FormLabel>
           <FormInput
+            value={pages}
             required
             type="number"
             placeholder="e.g. 123"
@@ -98,7 +107,12 @@ export default function BookForm({user}) {
         </FormGroup>
         <FormSelectGroup>
           <FormLabel htmlFor="status">Status</FormLabel>
-          <FormSelect onChange={onChangeStatus} name="status" defaultValue="unread">
+          <FormSelect
+            value={status}
+            onChange={onChangeStatus}
+            name="status"
+            defaultValue="unread"
+          >
             <option value="read">Read</option>
             <option value="unread">Unread</option>
           </FormSelect>
