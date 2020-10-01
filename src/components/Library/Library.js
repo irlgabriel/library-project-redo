@@ -12,7 +12,7 @@ export default function Library({user, books, setBooks}) {
       <BookForm user={user}/>
       <LibraryHeader>{`Library(${books.length})`}</LibraryHeader>
       <BooksContainer>
-      {books.map(el => <Book key={el.id} book={el} setBooks={setBooks} books={books}/>)}
+      {books.map(el => <Book user={user} key={el.id} book={el} setBooks={setBooks} books={books}/>)}
       </BooksContainer>
     </Container>
   );

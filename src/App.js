@@ -37,7 +37,6 @@ function App() {
   const [books, setBooks] = useState([]);
 
   if(value) {
-    console.log(value)
     if(books !== value) setBooks(value)
   }
   return (
