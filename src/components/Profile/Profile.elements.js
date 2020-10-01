@@ -17,18 +17,30 @@ export const BookDetails = styled.div`
 
 `
 export const ReadBook = styled.p`
+  user-select: none;
   margin: 0 5px;
   display: inline-block;
   padding: 5px;
   border-radius: 5px;
   background: lightgreen;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: orange;
+    color: white;
+  }
 `
 export const UnreadBook = styled.p`
+  user-select: none;
   margin: 0 5px;
   display: inline-block;
   padding: 5px;
   border-radius: 5px;
   background: lightgoldenrodyellow;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: orange;
+    color: white;
+  }  
 `
 
 export const Paragraph = styled.p`
