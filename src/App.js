@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Router, browserHistory, Route } from "react-router-dom";
 import GlobalStyles, { MainContainer } from "./globalStyles";
 import firebase from "firebase";
 import { useAuthState } from "react-firebase-hooks/auth"
@@ -40,7 +40,7 @@ function App() {
     if(books !== value) setBooks(value)
   }
   return (
-    <Router>
+    <Router history={browserHistory}>
       <MainContainer>
         <GlobalStyles />
         <Navbar user={user} />
