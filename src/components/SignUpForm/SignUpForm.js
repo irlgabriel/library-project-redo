@@ -36,7 +36,6 @@ export default function SignUpUser() {
     const form = e.target.parentElement.parentElement
     const password = form.password
     const confirmation = form.password_confirmation
-    const submit = form.querySelector("button");
     if(password.value !== confirmation.value) {
       password.setCustomValidity("Passwords do not match!")
       confirmation.setCustomValidity("Passwords do not match!")

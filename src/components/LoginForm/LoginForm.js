@@ -21,7 +21,7 @@ export default function LogInUser() {
       .then(() => {
         window.location = "/";
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err.message));
   }
 
   return (
