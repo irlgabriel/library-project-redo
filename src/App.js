@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import GlobalStyles, { MainContainer } from "./globalStyles";
 import firebase from "firebase";
 import { useAuthState } from "react-firebase-hooks/auth"
+import { useCollectionData } from "react-firebase-hooks/firestore"
 
 // Import components
 import { Navbar } from "./components";
@@ -27,17 +28,18 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 const auth = firebase.auth();
+const db = firebase.firestore();
 
 function App() {
   const [user] = useAuthState(auth)
+  const bookCollection = db.collection(`Books${user ? user.uid : ""}`)
+  const [value, loading, error] = useCollectionData(bookCollection)
   const [books, setBooks] = useState([]);
-  if(books.length === 0) {
-  firebase.firestore().collection(`Books${user ? user.uid : ""}`).get()
-    .then(snap => {
-      setBooks(snap.docs.map(obj => obj.data()));
-    })
+
+  if(value) {
+    console.log(value)
+    if(books !== value) setBooks(value)
   }
-  
   return (
     <Router>
       <MainContainer>

@@ -33,7 +33,7 @@ export default function Navbar({ user }) {
       <Nav>
         <NavbarContainer>
           <NavLogo to="/">
-            <NavIcon />
+            <NavIcon onClick={closeMobileMenu} />
           </NavLogo>
           <MobileIcon onClick={handleClick} click={click}>
             {click ? <FaTimes /> : <FaBars />}
