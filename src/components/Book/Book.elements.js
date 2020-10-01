@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { FaTrash } from "react-icons/fa"
 
 export const BookContainer = styled.div`
+  
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -32,6 +33,7 @@ export const BookTitle = styled.p`
   text-align: center;
   font-size: 1.5rem;
   font-weight: bold;
+  user-select: none;
 `;
 export const BookAuthor = styled.p`
   margin-top: 25px;

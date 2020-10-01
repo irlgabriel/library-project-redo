@@ -29,6 +29,8 @@ export const FormGroup = styled.div`
 `;
 
 export const FormHeader = styled.p`
+  user-select: none;
+  
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   text-transform: uppercase;
@@ -78,6 +80,7 @@ export const FormSelectGroup = styled.div`
 export const FormSelect = styled.select``;
 
 export const FormToggler = styled.div`
+  cursor: pointer;
   font-weight: bold;
   display: flex;
   justify-content: center;

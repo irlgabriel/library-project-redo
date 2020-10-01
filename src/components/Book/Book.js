@@ -42,7 +42,7 @@ export default function Book({ user, book, books, setBooks}) {
         <BookAuthor>
           {book.author}
           </BookAuthor>
-        <BookPages>{book.pages}</BookPages>
+        <BookPages>{book.pages}p.</BookPages>
         <DeleteButton onClick={deleteHandler} />
       </BookContainer>
     </>
