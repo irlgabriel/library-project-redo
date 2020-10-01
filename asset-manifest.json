@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/library-project-redo/static/js/main.dcb11c81.chunk.js",
-    "main.js.map": "/library-project-redo/static/js/main.dcb11c81.chunk.js.map",
+    "main.js": "/library-project-redo/static/js/main.63db9893.chunk.js",
+    "main.js.map": "/library-project-redo/static/js/main.63db9893.chunk.js.map",
     "runtime-main.js": "/library-project-redo/static/js/runtime-main.3fdb27d6.js",
     "runtime-main.js.map": "/library-project-redo/static/js/runtime-main.3fdb27d6.js.map",
-    "static/js/2.cb4912cf.chunk.js": "/library-project-redo/static/js/2.cb4912cf.chunk.js",
-    "static/js/2.cb4912cf.chunk.js.map": "/library-project-redo/static/js/2.cb4912cf.chunk.js.map",
+    "static/js/2.9d6ddfda.chunk.js": "/library-project-redo/static/js/2.9d6ddfda.chunk.js",
+    "static/js/2.9d6ddfda.chunk.js.map": "/library-project-redo/static/js/2.9d6ddfda.chunk.js.map",
     "index.html": "/library-project-redo/index.html",
-    "precache-manifest.3f8c40dff536cd2d8589d9dbbe26a22d.js": "/library-project-redo/precache-manifest.3f8c40dff536cd2d8589d9dbbe26a22d.js",
+    "precache-manifest.3c275e63a30b030e14a8d3c02234857a.js": "/library-project-redo/precache-manifest.3c275e63a30b030e14a8d3c02234857a.js",
     "service-worker.js": "/library-project-redo/service-worker.js",
-    "static/js/2.cb4912cf.chunk.js.LICENSE.txt": "/library-project-redo/static/js/2.cb4912cf.chunk.js.LICENSE.txt"
+    "static/js/2.9d6ddfda.chunk.js.LICENSE.txt": "/library-project-redo/static/js/2.9d6ddfda.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.3fdb27d6.js",
-    "static/js/2.cb4912cf.chunk.js",
-    "static/js/main.dcb11c81.chunk.js"
+    "static/js/2.9d6ddfda.chunk.js",
+    "static/js/main.63db9893.chunk.js"
   ]
 }
