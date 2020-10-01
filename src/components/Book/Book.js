@@ -7,24 +7,26 @@ import {
   DeleteButton,
 } from "./Book.elements";
 import firebase from "firebase"
-import { useCollection } from 'react-firebase-hooks/firestore';
 
 export default function Book({ user, book, books, setBooks}) {
   const db = firebase.firestore()
+  const collectionName = `Books${user.uid}`
 
-  const booksCollection = db.collection(`Books${user.uid}`);
+  const booksCollection = db.collection(collectionName);
   // const [value, loading, error] = useCollection(booksCollection);
 
   function toggleStatus(e) {
+
     const bookId = e.target.getAttribute("data-id");
     const bookRef = booksCollection.doc(bookId);
-    bookRef.update({status: book.status === "read" ? "unread" : "read"})
-    
+    bookRef.update({status: book.status === "read" ? "unread" : "read"}) 
   }
   function deleteHandler(e) {
+    e.stopPropagation()
     if(window.confirm("Are you sure you want to delete this book? This action cannot be undone.")) {
-      const bookId = e.target.parentElement
-      //db.collection(collectionName).doc()
+      const bookId = e.target.parentElement.parentElement.getAttribute("data-id")
+      console.log(bookId)
+      booksCollection.doc(bookId).delete()
     } else {
 
     }
