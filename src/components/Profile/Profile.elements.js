@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const ProfileInfo = styled.div`
   min-width: 400px;
@@ -6,15 +6,14 @@ export const ProfileInfo = styled.div`
   padding: 10px;
   border-radius: 10px;
   background: lightpink;
-`
+`;
 
 export const UserEmail = styled.p`
   margin-bottom: 10px;
   text-align: center;
-`
+`;
 
-export const BookDetails = styled.div`
-`
+export const BookDetails = styled.div``;
 export const ReadBook = styled.p`
   user-select: none;
   margin: 0 5px;
@@ -27,7 +26,7 @@ export const ReadBook = styled.p`
     background-color: orange;
     color: white;
   }
-`
+`;
 export const UnreadBook = styled.p`
   user-select: none;
   margin: 0 5px;
@@ -39,10 +38,10 @@ export const UnreadBook = styled.p`
   &:hover {
     background-color: orange;
     color: white;
-  }  
-`
+  }
+`;
 
 export const Paragraph = styled.p`
   margin: 10px 0;
   display: inline-block;
-`
+`;

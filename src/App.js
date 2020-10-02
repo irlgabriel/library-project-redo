@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { HashRouter, Route } from "react-router-dom";
 import GlobalStyles, { MainContainer } from "./globalStyles";
 import firebase from "firebase";
-import { useAuthState } from "react-firebase-hooks/auth"
-import { useCollectionData } from "react-firebase-hooks/firestore"
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useCollectionData } from "react-firebase-hooks/firestore";
 
 // Import components
 import { Navbar } from "./components";
@@ -11,8 +11,8 @@ import { Library } from "./components";
 import { LoginForm } from "./components";
 import { Footer } from "./components";
 import { SignUpForm } from "./components";
-import { Logout } from "./components"
-import { Profile } from "./components"
+import { Logout } from "./components";
+import { Profile } from "./components";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDGfkgO__SMjKni5qL8G4Pku1XT5khByfs",
@@ -31,24 +31,33 @@ const auth = firebase.auth();
 const db = firebase.firestore();
 
 function App() {
-  const [user] = useAuthState(auth)
-  const bookCollection = db.collection(`Books${user ? user.uid : ""}`)
-  const [value, loading, error] = useCollectionData(bookCollection)
+  const [user] = useAuthState(auth);
+  const bookCollection = db.collection(`Books${user ? user.uid : ""}`);
+  const [value, loading, error] = useCollectionData(bookCollection);
   const [books, setBooks] = useState([]);
 
-  if(value) {
-    if(books !== value) setBooks(value)
+  if (value) {
+    if (books !== value) setBooks(value);
   }
   return (
     <HashRouter basename="/">
       <MainContainer>
         <GlobalStyles />
         <Navbar user={user} />
-        <Route path="/" exact render={() => (<Library user={user} setBooks={setBooks} books={books}/>)}/>
-        <Route path="/login" render={() => (<LoginForm />) }/>
+        <Route
+          path="/"
+          exact
+          render={() => (
+            <Library user={user} setBooks={setBooks} books={books} />
+          )}
+        />
+        <Route path="/login" render={() => <LoginForm />} />
         <Route path="/sign-up" component={SignUpForm} />
         <Route path="/logout" component={Logout} />
-        <Route path="/profile" render={() => (<Profile books={books} user={user}/>)}/>
+        <Route
+          path="/profile"
+          render={() => <Profile books={books} user={user} />}
+        />
         <Footer />
       </MainContainer>
     </HashRouter>

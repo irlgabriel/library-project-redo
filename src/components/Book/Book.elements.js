@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FaTrash } from "react-icons/fa"
+import { FaTrash } from "react-icons/fa";
 
 export const BookContainer = styled.div`
   position: relative;
@@ -15,7 +15,8 @@ export const BookContainer = styled.div`
   margin: 10px;
   transition: all 0.3s ease;
   &:hover {
-    background: ${({ bookStatus }) => (bookStatus ? "lightcoral" : "lightblue")};
+    background: ${({ bookStatus }) =>
+      bookStatus ? "lightcoral" : "lightblue"};
   }
 
   @media screen and (max-width: 768px) {
@@ -63,5 +64,5 @@ export const StatusDiv = styled.div`
   bottom: 0;
   padding: 10px;
   border-top-left-radius: 5px;
-  background: ${({status}) => (status === "read" ? "lightgray" : "white")}
-`
+  background: ${({ status }) => (status === "read" ? "lightgray" : "white")};
+`;

@@ -30,7 +30,7 @@ export const FormGroup = styled.div`
 
 export const FormHeader = styled.p`
   user-select: none;
-  
+
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   text-transform: uppercase;
@@ -106,4 +106,3 @@ export const ToggleIcon = styled(FaAngleDown)`
   transform: ${({ formToggled }) =>
     !formToggled ? "rotate(0deg)" : "rotate(180deg)"};
 `;
-

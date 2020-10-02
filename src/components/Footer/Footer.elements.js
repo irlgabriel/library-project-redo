@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const FooterContainer = styled.footer`
-
   margin-top: auto;
   text-align: center;
   background: #101522;

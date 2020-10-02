@@ -46,10 +46,10 @@ export default function Navbar({ user }) {
             </NavItem>
             {user ? (
               <NavItem>
-              <NavLink onClick={closeMobileMenu} to="/profile">
-                Profile
-              </NavLink>
-            </NavItem>
+                <NavLink onClick={closeMobileMenu} to="/profile">
+                  Profile
+                </NavLink>
+              </NavItem>
             ) : (
               ""
             )}
@@ -59,12 +59,10 @@ export default function Navbar({ user }) {
                   Logout
                 </NavLink>
               </NavItem>
-
             ) : (
               ""
             )}
-            
-            
+
             {!user ? (
               <NavItem>
                 <NavLink onClick={closeMobileMenu} to="/login">
@@ -74,7 +72,7 @@ export default function Navbar({ user }) {
             ) : (
               ""
             )}
-            
+
             {!user ? (
               <NavItem>
                 <NavLink onClick={closeMobileMenu} to="/sign-up">
@@ -84,7 +82,6 @@ export default function Navbar({ user }) {
             ) : (
               ""
             )}
-            
           </NavMenu>
         </NavbarContainer>
       </Nav>

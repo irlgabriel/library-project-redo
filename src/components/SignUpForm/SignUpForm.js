@@ -11,34 +11,32 @@ import { Button, Container } from "../../globalStyles";
 
 export default function SignUpUser() {
   const auth = firebase.auth();
-  
+
   function submitHandler(e) {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    if(e.target.checkValidity()) {
+    if (e.target.checkValidity()) {
       auth
-      .createUserWithEmailAndPassword(email, password)
-      .then((user) => {
-        console.log(user);
-        window.location = "/";
-      })
-      .catch((err) => {
-        
-      });
+        .createUserWithEmailAndPassword(email, password)
+        .then((user) => {
+          console.log(user);
+          window.location = "/";
+        })
+        .catch((err) => {});
     } else {
       e.target.reportValidity();
     }
   }
 
   function validatePasswords(e) {
-    const form = e.target.parentElement.parentElement
-    const password = form.password
-    const confirmation = form.password_confirmation
-    if(password.value !== confirmation.value) {
-      password.setCustomValidity("Passwords do not match!")
-      confirmation.setCustomValidity("Passwords do not match!")
+    const form = e.target.parentElement.parentElement;
+    const password = form.password;
+    const confirmation = form.password_confirmation;
+    if (password.value !== confirmation.value) {
+      password.setCustomValidity("Passwords do not match!");
+      confirmation.setCustomValidity("Passwords do not match!");
     } else {
       password.setCustomValidity("");
       confirmation.setCustomValidity("");
@@ -48,17 +46,15 @@ export default function SignUpUser() {
   function validateEmail(e) {
     const email = e.target;
 
-    auth.fetchSignInMethodsForEmail(email.value)
-    .then(res => {
-      if(res.length === 0) {
+    auth.fetchSignInMethodsForEmail(email.value).then((res) => {
+      if (res.length === 0) {
         email.setCustomValidity("");
       } else {
-        email.setCustomValidity("Email Already in Use!")
+        email.setCustomValidity("Email Already in Use!");
       }
-      email.reportValidity()
-    })
+      email.reportValidity();
+    });
   }
-
 
   return (
     <Container>
@@ -78,7 +74,7 @@ export default function SignUpUser() {
         <FormGroup>
           <FormLabel htmlFor="password">Password</FormLabel>
           <FormInput
-            onChange={validatePasswords} 
+            onChange={validatePasswords}
             placeholder="********"
             required
             minLength="6"
@@ -87,9 +83,11 @@ export default function SignUpUser() {
           ></FormInput>
         </FormGroup>
         <FormGroup>
-        <FormLabel htmlFor="password_confirmation">Password Confirmation</FormLabel>
+          <FormLabel htmlFor="password_confirmation">
+            Password Confirmation
+          </FormLabel>
           <FormInput
-            onChange={validatePasswords} 
+            onChange={validatePasswords}
             placeholder="********"
             required
             minLength="6"
@@ -101,6 +99,6 @@ export default function SignUpUser() {
           <Button type="submit">Sign Up</Button>
         </FormGroup>
       </Form>
-    </Container>     
+    </Container>
   );
 }

@@ -47,10 +47,10 @@ export default function BookForm({ user }) {
       .then((book) => {
         const bookId = book.id;
         book.update({ id: bookId });
-        setTitle("")
-        setAuthor("")
-        setStatus("unread")
-        setPages(0)
+        setTitle("");
+        setAuthor("");
+        setStatus("unread");
+        setPages(0);
       })
       .catch((err) => console.log(err.message));
   }

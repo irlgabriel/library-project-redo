@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import { FaBorderNone } from "react-icons/fa";
 
 export const LibraryHeader = styled.h1`
@@ -21,7 +21,7 @@ export const NoLogin = styled.div`
   background: lightsalmon;
   padding: 15px;
   border-radius: 5px;
-`
+`;
 
 export const UserLink = styled(Link)`
   text-decoration: none;
@@ -37,9 +37,14 @@ export const UserLink = styled(Link)`
     background: white;
     color: darkgrey;
   }
-`
+`;
 
 export const Header = styled.h4`
   text-align: center;
   margin-bottom: 10px;
-`
+`;
+
+export const Hint = styled.em`
+  display: inline-block;
+  margin: 0 auto;
+`;
