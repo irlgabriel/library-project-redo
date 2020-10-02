@@ -18,7 +18,7 @@ export default function Library({ user, books, setBooks }) {
         <Container>
           <BookForm user={user} />
           <LibraryHeader>{`Library(${books.length})`}</LibraryHeader>
-          <Hint>Press on a book to toggle its read status</Hint>
+          {books.length ? <Hint>Press on a book to toggle its read status</Hint> : ""}
           <BooksContainer>
             {books.map((el) => (
               <Book

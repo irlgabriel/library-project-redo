@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const ProfileInfo = styled.div`
+cursor: default;
   min-width: 400px;
   margin: 20px auto;
   padding: 10px;
@@ -42,6 +43,8 @@ export const UnreadBook = styled.p`
 `;
 
 export const Paragraph = styled.p`
+  user-select: none;
+  cursor: default;
   margin: 10px 0;
   display: inline-block;
 `;

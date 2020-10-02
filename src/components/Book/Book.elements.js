@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { FaTrash } from "react-icons/fa";
 
 export const BookContainer = styled.div`
+  cursor: default;
+  box-shadow: 0 0 10px;
   position: relative;
   display: flex;
   flex-direction: column;

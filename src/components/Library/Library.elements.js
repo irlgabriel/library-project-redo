@@ -45,6 +45,8 @@ export const Header = styled.h4`
 `;
 
 export const Hint = styled.em`
-  display: inline-block;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 5px 0;
 `;

@@ -20,12 +20,6 @@ export const FormGroup = styled.div`
   display: flex;
   flex-direction: column;
   margin: 10px;
-
-  &:last-of-type {
-    width: 100%;
-    flex-direction: row;
-    justify-content: center;
-  }
 `;
 
 export const FormHeader = styled.p`

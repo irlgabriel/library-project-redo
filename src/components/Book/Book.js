@@ -17,7 +17,12 @@ export default function Book({ user, book, books, setBooks }) {
   // const [value, loading, error] = useCollection(booksCollection);
 
   function toggleStatus(e) {
-    const bookId = e.target.getAttribute("data-id");
+    let bookId;
+    if(e.target.hasAttribute("data-id")) {
+      bookId = e.target.getAttribute("data-id");
+    } else {
+      bookId = e.target.parentElement.getAttribute("data-id");
+    }
     const bookRef = booksCollection.doc(bookId);
     bookRef.update({ status: book.status === "read" ? "unread" : "read" });
   }
