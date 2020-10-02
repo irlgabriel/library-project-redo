@@ -15,9 +15,10 @@ export const BooksContainer = styled.div`
 
 export const NoLogin = styled.div`
   display: flex;
+  max-width: 500px;
   flex-direction: column;
+  align-items: center;
   margin: 10px auto;
-  width: 500px;
   background: lightsalmon;
   padding: 15px;
   border-radius: 5px;
@@ -31,6 +32,7 @@ export const UserLink = styled(Link)`
   color: white;
   padding: 5px;
   background: darkgrey;
+  width: 100%;
   border-radius: 5px;
   transition: all 0.3s ease;
   &:hover {

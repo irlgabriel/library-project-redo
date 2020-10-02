@@ -53,3 +53,6 @@ export const Button = styled.button`
   padding: 0.175rem 0.5rem;
   margin: auto;
 `;
+export const AlreadyUser = styled.div`
+  
+`

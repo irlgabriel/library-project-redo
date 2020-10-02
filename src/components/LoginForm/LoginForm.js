@@ -67,8 +67,9 @@ export default function LogInUser() {
         </FormGroup>
       </Form>
       <FormGroup>
-        <Button onClick={googleLogin}>Login with Google</Button>
+        <Button onClick={googleLogin}>Login with Google</Button>  
       </FormGroup>
+      
     </Container>
   );
 }
