@@ -47,6 +47,7 @@ export const FormInput = styled.input`
   &:focus:valid {
     border: 3px solid rgba(50, 168, 82, 0.4);
   }
+
 `;
 export const Button = styled.button`
   padding: 0.175rem 0.5rem;

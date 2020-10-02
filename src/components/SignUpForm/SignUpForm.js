@@ -41,6 +41,7 @@ export default function SignUpUser() {
       password.setCustomValidity("");
       confirmation.setCustomValidity("");
     }
+    e.target.reportValidity()
   }
 
   function validateEmail(e) {
