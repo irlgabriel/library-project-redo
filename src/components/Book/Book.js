@@ -5,6 +5,7 @@ import {
   BookAuthor,
   BookPages,
   DeleteButton,
+  StatusDiv
 } from "./Book.elements";
 import firebase from "firebase"
 
@@ -44,6 +45,11 @@ export default function Book({ user, book, books, setBooks}) {
           </BookAuthor>
         <BookPages>{book.pages}p.</BookPages>
         <DeleteButton onClick={deleteHandler} />
+        <StatusDiv status={book.status}>
+        {
+          book.status === "read" ? "READ" : "UNREAD"
+        }
+        </StatusDiv>
       </BookContainer>
     </>
   );

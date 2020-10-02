@@ -1,5 +1,6 @@
 import React from "react";
 import firebase from "firebase";
+import { useHistory } from "react-router-dom"
 import {
   FormGroup,
   Form,
@@ -9,7 +10,9 @@ import {
 } from "../Form/Form.elements";
 import { Button, Container } from "../../globalStyles";
 
-export default function LogInUser({googleLogin}) {
+export default function LogInUser() {
+  const history = useHistory();
+
   const auth = firebase.auth()
 
   function googleLogin() {
@@ -17,21 +20,20 @@ export default function LogInUser({googleLogin}) {
     auth
       .signInWithPopup(provider)
       .then((user) => {
-        window.location = "/profile";
+        history.push("/profile");
       })
       .catch(err => console.log(err.message))
-
   }
 
   function submitHandler(e) {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-
+    
     auth
       .signInWithEmailAndPassword(email, password)
       .then(() => {
-        window.location = "/";
+        history.push("/profile");
       })
       .catch((err) => console.log(err.message));
   }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Router, browserHistory, Route } from "react-router-dom";
+import { HashRouter, Route } from "react-router-dom";
 import GlobalStyles, { MainContainer } from "./globalStyles";
 import firebase from "firebase";
 import { useAuthState } from "react-firebase-hooks/auth"
@@ -40,7 +40,7 @@ function App() {
     if(books !== value) setBooks(value)
   }
   return (
-    <Router history={browserHistory}>
+    <HashRouter basename="/">
       <MainContainer>
         <GlobalStyles />
         <Navbar user={user} />
@@ -51,7 +51,7 @@ function App() {
         <Route path="/profile" render={() => (<Profile books={books} user={user}/>)}/>
         <Footer />
       </MainContainer>
-    </Router>
+    </HashRouter>
   );
 }
 

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { FaTrash } from "react-icons/fa"
 
 export const BookContainer = styled.div`
-  
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -56,3 +56,12 @@ export const DeleteButton = styled(FaTrash)`
     color: red;
   }
 `;
+
+export const StatusDiv = styled.div`
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 10px;
+  border-top-left-radius: 5px;
+  background: ${({status}) => (status === "read" ? "lightgray" : "white")}
+`
