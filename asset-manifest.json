@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/library-project-redo/static/js/main.8977e0c8.chunk.js",
-    "main.js.map": "/library-project-redo/static/js/main.8977e0c8.chunk.js.map",
+    "main.js": "/library-project-redo/static/js/main.ddad556a.chunk.js",
+    "main.js.map": "/library-project-redo/static/js/main.ddad556a.chunk.js.map",
     "runtime-main.js": "/library-project-redo/static/js/runtime-main.3fdb27d6.js",
     "runtime-main.js.map": "/library-project-redo/static/js/runtime-main.3fdb27d6.js.map",
     "static/js/2.a1ba8484.chunk.js": "/library-project-redo/static/js/2.a1ba8484.chunk.js",
     "static/js/2.a1ba8484.chunk.js.map": "/library-project-redo/static/js/2.a1ba8484.chunk.js.map",
     "index.html": "/library-project-redo/index.html",
-    "precache-manifest.cdd542af51ecf803474566557a38c192.js": "/library-project-redo/precache-manifest.cdd542af51ecf803474566557a38c192.js",
+    "precache-manifest.b472e83923ba169f2e838765c61d8889.js": "/library-project-redo/precache-manifest.b472e83923ba169f2e838765c61d8889.js",
     "service-worker.js": "/library-project-redo/service-worker.js",
     "static/js/2.a1ba8484.chunk.js.LICENSE.txt": "/library-project-redo/static/js/2.a1ba8484.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.3fdb27d6.js",
     "static/js/2.a1ba8484.chunk.js",
-    "static/js/main.8977e0c8.chunk.js"
+    "static/js/main.ddad556a.chunk.js"
   ]
 }
