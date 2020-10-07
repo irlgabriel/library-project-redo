@@ -15,6 +15,7 @@ export const BooksContainer = styled.div`
 `;
 
 export const NoLogin = styled.div`
+  background-color: lightsalmon;
   display: flex;
   max-width: 500px;
   flex-direction: column;
