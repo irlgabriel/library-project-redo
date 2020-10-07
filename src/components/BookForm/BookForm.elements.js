@@ -6,6 +6,7 @@ export const Form = styled.form`
   flex-wrap: wrap;
   margin: auto;
   margin-top: 10px;
+  
   width: 700px;
   justify-content: center;
 
@@ -20,11 +21,12 @@ export const FormGroup = styled.div`
   display: flex;
   flex-direction: column;
   margin: 10px;
+  color: white;
 `;
 
 export const FormHeader = styled.p`
   user-select: none;
-
+  color: white;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   text-transform: uppercase;
@@ -48,10 +50,10 @@ export const FormInput = styled.input`
     border: 2px solid lightgray;
   }
   &:focus:invalid {
-    border: 2px solid rgba(219, 22, 22, 0.4);
+    border: 2px solid rgba(219, 22, 22, 0.7);
   }
   &:focus:valid {
-    border: 2px solid rgba(50, 168, 82, 0.4);
+    border: 2px solid rgba(50, 168, 82, 0.7);
   }
 `;
 
@@ -79,7 +81,7 @@ export const FormToggler = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(50, 168, 82, 0.4);
+  background: #101522;
   padding: 0.375rem 0.75rem;
   border-radius: 5px;
   user-select: none;
@@ -96,6 +98,7 @@ export const FlexBreak = styled.div`
 
 export const ToggleIcon = styled(FaAngleDown)`
   font-size: 20px;
+  color: white;
   transition: all 0.3s ease-in-out;
   transform: ${({ formToggled }) =>
     !formToggled ? "rotate(0deg)" : "rotate(180deg)"};

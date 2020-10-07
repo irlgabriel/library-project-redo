@@ -6,7 +6,6 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: 'Source Sans Pro', sans-serif;
-    
   }
 `;
 
@@ -21,6 +20,10 @@ export const MainContainer = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-image: url('https://images.pexels.com/photos/3494806/pexels-photo-3494806.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: cover;
 `;
 
 export const Button = styled.button`

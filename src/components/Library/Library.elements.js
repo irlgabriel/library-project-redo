@@ -4,6 +4,7 @@ import { FaBorderNone } from "react-icons/fa";
 
 export const LibraryHeader = styled.h1`
   text-align: center;
+  color: white;
 `;
 
 export const BooksContainer = styled.div`
@@ -19,7 +20,7 @@ export const NoLogin = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 10px auto;
-  background: lightsalmon;
+  border: 1px solid black;
   padding: 15px;
   border-radius: 5px;
 `;
@@ -31,7 +32,7 @@ export const UserLink = styled(Link)`
   font-size: 1.4rem;
   color: white;
   padding: 5px;
-  background: darkgrey;
+  background: #101522;
   width: 100%;
   border-radius: 5px;
   transition: all 0.3s ease;
@@ -51,4 +52,5 @@ export const Hint = styled.em`
   justify-content: center;
   width: 100%;
   margin: 5px 0;
+  color: white;
 `;
