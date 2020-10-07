@@ -21,6 +21,11 @@ export const BookContainer = styled.div`
       bookStatus ? "lightcoral" : "lightblue"};
   }
 
+  @media screen and (max-width: 600px) {
+    width: 450px;
+    height: 600px;
+  }
+
   @media screen and (max-width: 768px) {
     width: 350px;
     height: 450px;
