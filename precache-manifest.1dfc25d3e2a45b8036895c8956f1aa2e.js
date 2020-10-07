@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ac0cfcd8944b319c7b55b236c09e2d59",
+    "revision": "6198c6b72ebfe1b07bc89b8d8a7a24dc",
     "url": "/library-project-redo/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/library-project-redo/static/js/2.8f6a80ea.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b4fba4e4596f62355521",
-    "url": "/library-project-redo/static/js/main.8b51735e.chunk.js"
+    "revision": "34b54e815b78e20ebabe",
+    "url": "/library-project-redo/static/js/main.9c517819.chunk.js"
   },
   {
     "revision": "40a280daf0abf0d9cbc7",
