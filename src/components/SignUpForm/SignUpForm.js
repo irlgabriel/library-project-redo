@@ -1,13 +1,13 @@
 import React from "react";
 import firebase from "firebase";
-import { Link } from "react-router-dom"
 import {
   FormGroup,
   Form,
   FormHeader,
   FormLabel,
   FormInput,
-  AlreadyUser
+  AlreadyUser,
+  UserLink
 } from "../Form/Form.elements";
 import { Button, Container } from "../../globalStyles";
 
@@ -103,8 +103,8 @@ export default function SignUpUser() {
         </FormGroup>
       </Form>
       <AlreadyUser>
-        Already got an account? <Link to="/login">Login</Link>
-      </AlreadyUser>
+        Already got an account? <UserLink to="/login">Login</UserLink>
+      </AlreadyUser>  
     </Container>
   );
 }

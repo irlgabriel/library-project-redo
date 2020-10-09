@@ -7,6 +7,7 @@ import {
   FormHeader,
   FormLabel,
   FormInput,
+  ButtonContainer,
 } from "../Form/Form.elements";
 import { Button, Container } from "../../globalStyles";
 
@@ -23,6 +24,17 @@ export default function LogInUser() {
         history.push("/profile");
       })
       .catch((err) => console.log(err.message));
+  }
+
+  function facebookLogin() {
+    let provider = new firebase.auth.FacebookAuthProvider();
+    auth.signInWithPopup(provider)
+    .then(() => {
+      history.push("/profile");
+    })
+    .catch((err) => {
+      console.log(err.message);
+    })
   }
 
   function submitHandler(e) {
@@ -66,9 +78,12 @@ export default function LogInUser() {
           <Button type="submit">Login</Button>
         </FormGroup>
       </Form>
-      <FormGroup>
-        <Button onClick={googleLogin}>Login with Google</Button>  
-      </FormGroup>
+      <ButtonContainer>
+        <Button onClick={googleLogin}>Login with Google</Button> 
+      </ButtonContainer>
+      <ButtonContainer>
+        <Button onClick={facebookLogin}>Login with Facebook</Button> 
+      </ButtonContainer>
       
     </Container>
   );

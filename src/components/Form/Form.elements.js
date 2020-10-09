@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Form = styled.form`
   max-width: 600px;
@@ -24,11 +25,13 @@ export const FormGroup = styled.div`
 export const FormHeader = styled.h3`
   width: 100%;
   text-align: center;
+  color: white;
 `;
 
 export const FormLabel = styled.label`
   text-align: center;
   margin-bottom: 5px;
+  color: white;
 `;
 
 export const FormInput = styled.input`
@@ -53,6 +56,20 @@ export const Button = styled.button`
   padding: 0.175rem 0.5rem;
   margin: auto;
 `;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: .75rem;
+`
 export const AlreadyUser = styled.div`
-  
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  color: white;
+`
+export const UserLink = styled(Link)`
+  text-decoration: none;
+  color: lightcoral;
 `
