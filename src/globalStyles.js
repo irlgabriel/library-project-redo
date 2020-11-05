@@ -20,11 +20,32 @@ export const MainContainer = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-image: url('https://images.pexels.com/photos/3494806/pexels-photo-3494806.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500');
-  background-repeat: no-repeat;
-  background-attachment: fixed; 
-  background-size: cover;
+  position: relative;
 `;
+
+export const Image = styled.div`
+background-image: url('https://images.pexels.com/photos/3494806/pexels-photo-3494806.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500');
+background-repeat: no-repeat;
+background-attachment: fixed; 
+background-size: cover;
+position: absolute;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+z-index: -2;
+`
+
+export const ImageOverlay = styled.div`
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(70, 72, 82, 0.3);
+
+`
 
 export const Button = styled.button`
   user-select: none;

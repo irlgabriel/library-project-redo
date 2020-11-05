@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { HashRouter, Route } from "react-router-dom";
-import GlobalStyles, { MainContainer } from "./globalStyles";
+import GlobalStyles, { MainContainer, Image, ImageOverlay } from "./globalStyles";
 import firebase from "firebase";
 
 // Firebase Hooks
@@ -44,6 +44,8 @@ function App() {
   return (
     <HashRouter basename="/">
       <MainContainer>
+        <Image />
+        <ImageOverlay />
         <GlobalStyles />
         <Navbar user={user} />
         <Route
